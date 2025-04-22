@@ -198,11 +198,11 @@ Part 1b - Step 2: Assignment
 
 Thing 1) MIDI Keyboard
 5 properties:
-    1) number of keys
-    2) number of knobs
-    3) number of sliders
-    4) number of buttons
-    5) number of pedals
+    1) number of keys (int)
+    2) number of knobs (int)
+    3) number of sliders (int)
+    4) number of buttons (int)
+    5) number of pedals (int)
 3 things it can do:
     1) transmit digital signal
     2) control virtual instruments
@@ -210,11 +210,11 @@ Thing 1) MIDI Keyboard
 
 Thing 2) Coffee Machine
 5 properties:
-    1) water tank capacity
-    2) bean hopper capacity
-    3) espresso shot volume
-    4) number of brew strength levels
-    5) steam temperature
+    1) water tank capacity (int)
+    2) bean hopper capacity (int)
+    3) espresso shot volume (int)
+    4) number of brew strength levels (int)
+    5) steam temperature (double)
 3 things it can do:
     1) grind coffee beans
     2) brew espresso
@@ -222,11 +222,11 @@ Thing 2) Coffee Machine
 
 Thing 3) Skateboard
 5 properties:
-    1) deck length 
-    2) wheel size
-    3) wheel hardness
-    4) truck turning angle
-    5) bearing type
+    1) deck length (double)
+    2) wheel size (float)
+    3) wheel hardness (std::string)
+    4) truck turning angle (int)
+    5) bearing type (std::string)
 3 things it can do:
     1) perform tricks
     2) roll over ramps
@@ -234,11 +234,11 @@ Thing 3) Skateboard
 
 Thing 4) DAW Project
 5 properties:
-    1) number of audio tracks
-    2) number of MIDI tracks
-    3) number of beats per minute
-    4) number of sections
-    5) number of bars
+    1) number of audio tracks (int)
+    2) number of MIDI tracks (int)
+    3) number of beats per minute (int)
+    4) number of sections (int)
+    5) number of bars (int)
 3 things it can do:
     1) play back the composition
     2) apply audio effects
