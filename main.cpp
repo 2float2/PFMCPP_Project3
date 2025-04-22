@@ -522,7 +522,7 @@ example:
 
 /*
 =================
-Part 1d - Step 5: Commit
+Part 1d - Step 5: Commit 
 =================
 Now that you've made changes to the code, make a commit!
 Be sure to make the commit message meaningful.
