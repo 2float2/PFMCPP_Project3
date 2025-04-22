@@ -196,53 +196,7 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1) MIDI Keyboard
-5 properties:
-    1) number of keys (int)
-    2) number of knobs (int)
-    3) number of sliders (int)
-    4) number of buttons (int)
-    5) number of pedals (int)
-3 things it can do:
-    1) transmit digital signal
-    2) control virtual instruments
-    3) trigger loops
 
-Thing 2) Coffee Machine
-5 properties:
-    1) water tank capacity (int)
-    2) bean hopper capacity (int)
-    3) espresso shot volume (int)
-    4) number of brew strength levels (int)
-    5) steam temperature (double)
-3 things it can do:
-    1) grind coffee beans
-    2) brew espresso
-    3) steam milk
-
-Thing 3) Skateboard
-5 properties:
-    1) deck length (double)
-    2) wheel size (float)
-    3) wheel hardness (std::string)
-    4) truck turning angle (int)
-    5) bearing type (std::string)
-3 things it can do:
-    1) perform tricks
-    2) roll over ramps
-    3) carve along curves
-
-Thing 4) DAW Project
-5 properties:
-    1) number of audio tracks (int)
-    2) number of MIDI tracks (int)
-    3) number of beats per minute (int)
-    4) number of sections (int)
-    5) number of bars (int)
-3 things it can do:
-    1) play back the composition
-    2) apply audio effects
-    3) apply audio effects
 */
 
 /*
@@ -337,17 +291,7 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10) Livehouse
-5 properties:
-    1) stage
-    2) front of house audio system
-    3) backstage area
-    4) bar counter
-    5) lighting rig
-3 things it can do:
-    1) host live music performances
-    2) serve drinks to attendees
-    3) mix sound and control stage lighting
+
  */
 
  /*
@@ -434,6 +378,108 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
+
+ */
+
+/*
+=================
+Part 1d - Step 3: Commit
+=================
+Now that you've made changes to the code, make a commit!
+Be sure to make the commit message meaningful.
+*/
+
+/*
+================
+Part 1d - Step 4: Assignment
+================
+    - write the name of the primitive type you'll be using after each property for UDTs 5 - 9.
+    - You already did this for UDTs 1-4 in Part 1c.
+    - Pick properties that can be represented with 'int float double bool char std::string'
+    
+example: 
+    Display:
+        Number of Pixels (int)
+        Amount of Power consumed (milliwatt-hours) (float)
+        Brightness (double)
+        width in cm (int)
+        height in cm (int)
+*/
+
+/*
+=================
+Part 1d - Step 5: Commit 
+=================
+Now that you've made changes to the code, make a commit!
+Be sure to make the commit message meaningful.
+*/
+
+/*
+===================
+Part 1d - Step 6: assignment
+===================
+You've just defined 10 UDTs!
+4 of them are unrelated (UDTs 1-4).
+5 of them form the sub-objects that make up the 10th UDT. 
+
+MOVE THEM to the space below this block comment and put them in numerical order 
+(1 - 10).
+    DO NOT COPY. 
+    CUT AND PASTE. 
+    I do not want to see 2 copies of your Plain-English UDTs.  
+    I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
+    simply CUT and PASTE them in the space provided below:
+*/
+
+/*
+Thing 1) MIDI Keyboard
+5 properties:
+    1) number of keys (int)
+    2) number of knobs (int)
+    3) number of sliders (int)
+    4) number of buttons (int)
+    5) number of pedals (int)
+3 things it can do:
+    1) transmit digital signal
+    2) control virtual instruments
+    3) trigger loops
+
+Thing 2) Coffee Machine
+5 properties:
+    1) water tank capacity (int)
+    2) bean hopper capacity (int)
+    3) espresso shot volume (int)
+    4) number of brew strength levels (int)
+    5) steam temperature (double)
+3 things it can do:
+    1) grind coffee beans
+    2) brew espresso
+    3) steam milk
+
+Thing 3) Skateboard
+5 properties:
+    1) deck length (double)
+    2) wheel size (float)
+    3) wheel hardness (std::string)
+    4) truck turning angle (int)
+    5) bearing type (std::string)
+3 things it can do:
+    1) perform tricks
+    2) roll over ramps
+    3) carve along curves
+
+Thing 4) DAW Project
+5 properties:
+    1) number of audio tracks (int)
+    2) number of MIDI tracks (int)
+    3) number of beats per minute (int)
+    4) number of sections (int)
+    5) number of bars (int)
+3 things it can do:
+    1) play back the composition
+    2) apply audio effects
+    3) apply audio effects
+
 Thing 5) stage
 5 properties:
     1) number of monitor speakers (int)
@@ -493,66 +539,18 @@ Thing 9) Lighting Rig
     1) illuminate the stage
     2) change lighting colors and patterns
     3) synchronize lighting with music
- */
 
-/*
-=================
-Part 1d - Step 3: Commit
-=================
-Now that you've made changes to the code, make a commit!
-Be sure to make the commit message meaningful.
-*/
-
-/*
-================
-Part 1d - Step 4: Assignment
-================
-    - write the name of the primitive type you'll be using after each property for UDTs 5 - 9.
-    - You already did this for UDTs 1-4 in Part 1c.
-    - Pick properties that can be represented with 'int float double bool char std::string'
-    
-example: 
-    Display:
-        Number of Pixels (int)
-        Amount of Power consumed (milliwatt-hours) (float)
-        Brightness (double)
-        width in cm (int)
-        height in cm (int)
-*/
-
-/*
-=================
-Part 1d - Step 5: Commit 
-=================
-Now that you've made changes to the code, make a commit!
-Be sure to make the commit message meaningful.
-*/
-
-/*
-===================
-Part 1d - Step 6: assignment
-===================
-You've just defined 10 UDTs!
-4 of them are unrelated (UDTs 1-4).
-5 of them form the sub-objects that make up the 10th UDT. 
-
-MOVE THEM to the space below this block comment and put them in numerical order 
-(1 - 10).
-    DO NOT COPY. 
-    CUT AND PASTE. 
-    I do not want to see 2 copies of your Plain-English UDTs.  
-    I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
-    simply CUT and PASTE them in the space provided below:
-*/
-
-
-
-
-
-
-
-
-/*
+    Thing 10) Livehouse
+    5 properties:
+        1) stage
+        2) front of house audio system
+        3) backstage area
+        4) bar counter
+        5) lighting rig
+    3 things it can do:
+        1) host live music performances
+        2) serve drinks to attendees
+        3) mix sound and control stage lighting
 =================
 Part 1d - Step 7: Commit
 =================
