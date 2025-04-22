@@ -196,53 +196,53 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
+Thing 1) MIDI Keyboard
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of keys
+    2) number of knobs
+    3) number of sliders
+    4) number of buttons
+    5) number of pedals
 3 things it can do:
-    1)
-    2)
-    3)
+    1) transmit digital signal
+    2) control virtual instruments
+    3) trigger loops
 
-Thing 2)
+Thing 2) Coffee Machine
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) water tank capacity
+    2) bean hopper capacity
+    3) espresso shot volume
+    4) number of brew strength levels
+    5) steam temperature
 3 things it can do:
-    1)
-    2)
-    3)
+    1) grind coffee beans
+    2) brew espresso
+    3) steam milk
 
-Thing 3)
+Thing 3) Skateboard
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) deck length 
+    2) wheel size
+    3) wheel hardness
+    4) truck turning angle
+    5) bearing type
 3 things it can do:
-    1)
-    2)
-    3)
+    1) perform tricks
+    2) roll over ramps
+    3) carve along curves
 
-Thing 4)
+Thing 4) DAW Project
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of audio tracks
+    2) number of MIDI tracks
+    3) number of beats per minute
+    4) number of sections
+    5) number of bars
 3 things it can do:
-    1)
-    2)
-    3)
+    1) play back the composition
+    2) apply audio effects
+    3) apply audio effects
 */
 
 /*
