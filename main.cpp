@@ -83,51 +83,51 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
-            4) 
+            3) horn button
+            4) volume contorl buttons
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) steer the vehicle
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) speedometer
+            2) tachometer
+            3) odometer
+            4) fuel gauge
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) display speed
+            2) display engine RPM
+            3) display fuel level
     
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) air conditioning button
+            2) fan speed knob
+            3) temperature knob
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) turn on air conditioning
+            2) adjust fan speed
+            3) adjust temperature
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) volume knob
+            2) radio station knob
+            3) navigation screen
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) play music
+            2) navigate on the map
+            3) display radio station
 
     Sub Object: Seat 
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) seatbelt
+            2) seat adjustment controls
+            3) headrest
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) adjust seat position
+            2) buckle seatbelt
 */
 
 /*
