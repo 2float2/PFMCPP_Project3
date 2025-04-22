@@ -337,17 +337,17 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10)
+Thing 10) Livehouse
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) stage
+    2) front of house audio system
+    3) backstage area
+    4) bar counter
+    5) lighting rig
 3 things it can do:
-    1)
-    2)
-    3)
+    1) host live music performances
+    2) serve drinks to attendees
+    3) mix sound and control stage lighting
  */
 
  /*
@@ -434,65 +434,65 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
+Thing 5) stage
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of monitor speakers (int)
+    2) number of microphones (int)
+    3) number of instrument stands (int)
+    4) stage width (double)
+    5) stage depth (double)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) support performer setup
+    2) transmit sound to FOH system
+    3) provide stage monitoring
 
-Thing 6)
+Thing 6) Front of House Audio System
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of audio channels (int)
+    2) number of speakers (int)
+    3) outpt wattage (float)
+    4) type of mixing console (std::string)
+    5) number of equalizer (int)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) amplify input signals
+    2) route sound to audience
+    3) adjust volume and EQ settings
 
-Thing 7)
+Thing 7) Backstage Area
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of lockers (int)
+    2) number of dressing rooms (int)
+    3) backstage area size (double)
+    4) number of equiment storage shelves (int)
+    5) has equipment loading access (bool)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) provide resting space for performers
+    2) store cables and instruments
+    3) provide storage for personal belongings
 
-Thing 8)
+Thing 8) Bar Counter
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of drink options (int)
+    2) number of staff members (int)
+    3) number of seats (int)
+    4) provides non-alcoholic drink (bool)
+    5) has merchandise display area (bool)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) serve drinks to customers
+    2) process payments
+    3) sell band merchandise
 
-Thing 9)
+Thing 9) Lighting Rig
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of traditional lights (int)
+    2) number of computer lights (int)
+    3) number of control channels (int)
+    4) lighting console type (std::string)
+    5) height of rig (double)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) illuminate the stage
+    2) change lighting colors and patterns
+    3) synchronize lighting with music
  */
 
 /*
