@@ -444,6 +444,11 @@ Thing 1) MIDI Keyboard
     2) control virtual instruments
     3) trigger loops
 
+struct MIDIKeyboard
+{
+
+}
+
 Thing 2) Coffee Machine
 5 properties:
     1) water tank capacity (float)
@@ -455,6 +460,11 @@ Thing 2) Coffee Machine
     1) grind coffee beans
     2) brew espresso
     3) steam milk
+
+struct CoffeeMachine
+{
+
+}
 
 Thing 3) Skateboard
 5 properties:
@@ -468,6 +478,11 @@ Thing 3) Skateboard
     2) roll over ramps
     3) carve along curves
 
+struct Skateboard
+{
+
+}
+
 Thing 4) DAW Project
 5 properties:
     1) time signature (std::string)
@@ -480,7 +495,12 @@ Thing 4) DAW Project
     2) apply audio effects
     3) quantize notes
 
-Thing 5) stage
+struct DAWProject
+{
+
+}
+
+Thing 5) Stage
 5 properties:
     1) number of monitor speakers (int)
     2) number of microphones (int)
@@ -491,6 +511,11 @@ Thing 5) stage
     1) support performer setup
     2) transmit sound to FOH system
     3) provide stage monitoring
+
+struct Stage
+{
+
+}
 
 Thing 6) Front of House Audio System
 5 properties:
@@ -504,6 +529,11 @@ Thing 6) Front of House Audio System
     2) route sound to audience
     3) adjust volume and EQ settings
 
+struct FrontOfHouseAudioSystem
+{
+
+}
+
 Thing 7) Backstage Area
 5 properties:
     1) number of lockers (int)
@@ -515,6 +545,11 @@ Thing 7) Backstage Area
     1) provide resting space for performers
     2) store cables and instruments
     3) provide storage for personal belongings
+
+struct BackstageArea
+{
+
+}
 
 Thing 8) Bar Counter
 5 properties:
@@ -528,6 +563,11 @@ Thing 8) Bar Counter
     2) process payments
     3) sell band merchandise
 
+struct BarCounter
+{
+
+}
+
 Thing 9) Lighting Rig
 5 properties:
     1) number of traditional lights (int)
@@ -540,17 +580,28 @@ Thing 9) Lighting Rig
     2) change lighting colors and patterns
     3) synchronize lighting with music
 
-    Thing 10) Livehouse
-    5 properties:
-        1) stage
-        2) front of house audio system
-        3) backstage area
-        4) bar counter
-        5) lighting rig
-    3 things it can do:
-        1) host live music performances
-        2) serve drinks to attendees
-        3) mix sound and control stage lighting
+struct LightingRig
+{
+
+}
+
+Thing 10) Livehouse
+5 properties:
+    1) stage
+    2) front of house audio system
+    3) backstage area
+    4) bar counter
+    5) lighting rig
+3 things it can do:
+    1) host live music performances
+    2) serve drinks to attendees
+    3) mix sound and control stage lighting
+
+struct Livehouse
+{
+
+}
+
 =================
 Part 1d - Step 7: Commit
 =================
