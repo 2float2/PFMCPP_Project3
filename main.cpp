@@ -793,7 +793,7 @@ struct CarWash
 
 /*
 =================
-Part 1e - Step 4: Commit
+Part 1e - Step 4: Commit 
 =================
 Now that you've made changes, make a commit!
 Be sure to make the commit message meaningful.
