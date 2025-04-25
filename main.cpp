@@ -631,8 +631,11 @@ struct MIDIKeyboard //1
     std::string keySize = "mini";
     //3 things it can do:
     //    1) transmit digital signal
+    void transmitDigitalSignal();
     //    2) control virtual instruments
+    void controlVirtualInstruments(std::string intrumentName);
     //    3) trigger loops
+    void triggerLoops();
 };
 
 struct CoffeeMachine //2
@@ -650,8 +653,11 @@ struct CoffeeMachine //2
     double steamTemperature = 150.0;
     //3 things it can do:
     //    1) grind coffee beans
+    void grindCoffeeBeans();
     //    2) brew espresso
+    void brewEspresso();
     //    3) steam milk
+    void steamMilk();
 };
 
 struct Skateboard //3
@@ -669,8 +675,11 @@ struct Skateboard //3
     std::string bearingType = "barrel";
     //3 things it can do:
     //    1) perform tricks
+    void performTricks(std::string trickName);
     //    2) roll over ramps
+    void rollOverRamps();
     //    3) carve along curves
+    void carveAlongCurves();
 };
 
 struct DAWProject //4
@@ -688,8 +697,11 @@ struct DAWProject //4
     bool isQuantized = true;
     //3 things it can do:
     //    1) play back the composition
+    void playBackComposition();
     //    2) apply audio effects
+    void applyAudioEffects(std::string effectName);    
     //    3) quantize notes
+    void quantizeNotes();
 };
 
 struct Stage //5
@@ -707,8 +719,11 @@ struct Stage //5
     double stageDepth =20;
     //3 things it can do:
     //    1) support performer setup
+    void supportPerformerSetup();
     //    2) transmit sound to FOH system
+    void transmitSoundToFOHSystem();
     //    3) provide stage monitoring
+    void provideStageMonitoring();
 };
 
 struct FrontOfHouseAudioSystem //6
@@ -725,8 +740,11 @@ struct FrontOfHouseAudioSystem //6
     //    5) number of equalizer (int)
     //3 things it can do:
     //    1) amplify input signals
+    void amplifyInputSignals();
     //    2) route sound to audience
+    void routeSoundToAudience();
     //    3) adjust volume and EQ settings
+    void adjustVolumeAndEQSettings();
 };
 
 struct BackstageArea //7
@@ -744,8 +762,11 @@ struct BackstageArea //7
     bool hasEquipmentLoadingAccess = true;
     //3 things it can do:
     //    1) provide resting space for performers
+    void provideRestingSpaceForPerformers();
     //    2) store cables and instruments
+    void storeCablesAndInstruments();
     //    3) provide storage for personal belongings
+    void provideStorageForPersonalBelongings();
 };
 
 struct BarCounter //8
@@ -763,8 +784,11 @@ struct BarCounter //8
     bool hasMerchandiseDisplayArea = true;
     //3 things it can do:
     //    1) serve drinks to customers
+    void serveDrinksToCustomers();
     //    2) process payments
+    void processPayments();
     //    3) sell band merchandise
+    void sellBandMerchandise();
 };
 
 struct LightingRig //9
@@ -782,8 +806,11 @@ struct LightingRig //9
     double heightOfRig = 10.5;
     //3 things it can do:
     //    1) illuminate the stage
+    void illuminateTheStage();
     //    2) change lighting colors and patterns
+    void changeLightingColorsAndPatterns();
     //    3) synchronize lighting with music
+    void synchronizeLightingWithMusic();
 };
 
 struct Livehouse //10
@@ -801,8 +828,11 @@ struct Livehouse //10
     LightingRig lightingRig;
     //3 things it can do:
     //    1) host live music performances
+    void hostLiveMusicPerformances();
     //    2) serve drinks to attendees
+    void serveDrinksToAttendees();
     //    3) mix sound and control stage lighting
+    void mixSoundAndControlStageLighting();
 };
     
 /*
