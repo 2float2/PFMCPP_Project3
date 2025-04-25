@@ -446,7 +446,16 @@ Thing 1) MIDI Keyboard
 
 struct MIDIKeyboard
 {
-
+    //5 properties:
+    //    1) number of keys (int)
+    //    2) brand name (std::string)
+    //    3) has appegiator (bool)
+    //    4) has step sequencer (bool)
+    //    5) key size (std::string)
+    //3 things it can do:
+    //    1) transmit digital signal
+    //    2) control virtual instruments
+    //    3) trigger loops
 }
 
 Thing 2) Coffee Machine
@@ -463,7 +472,16 @@ Thing 2) Coffee Machine
 
 struct CoffeeMachine
 {
-
+    //5 properties:
+    //    1) water tank capacity (float)
+    //    2) bean hopper capacity (float)
+    //    3) espresso shot volume (float)
+    //    4) number of brew strength levels (int)
+    //    5) steam temperature (double)
+    //3 things it can do:
+    //    1) grind coffee beans
+    //    2) brew espresso
+    //    3) steam milk
 }
 
 Thing 3) Skateboard
@@ -480,7 +498,16 @@ Thing 3) Skateboard
 
 struct Skateboard
 {
-
+    //5 properties:
+    //    1) deck length (double)
+    //    2) wheel size (float)
+    //    3) wheel hardness (std::string)
+    //    4) truck turning angle (int)
+    //    5) bearing type (std::string)
+    //3 things it can do:
+    //    1) perform tricks
+    //    2) roll over ramps
+    //    3) carve along curves
 }
 
 Thing 4) DAW Project
@@ -497,7 +524,16 @@ Thing 4) DAW Project
 
 struct DAWProject
 {
-
+    //5 properties:
+    //    1) time signature (std::string)
+    //    2) musical mode (std::string)
+    //    3) key signature (std::string)
+    //    4) number of sections (int)
+    //    5) is quantized (bool)
+    //3 things it can do:
+    //    1) play back the composition
+    //    2) apply audio effects
+    //    3) quantize notes
 }
 
 Thing 5) Stage
@@ -514,7 +550,16 @@ Thing 5) Stage
 
 struct Stage
 {
-
+    //5 properties:
+    //    1) number of monitor speakers (int)
+    //    2) number of microphones (int)
+    //    3) number of instrument stands (int)
+    //    4) stage width (double)
+    //    5) stage depth (double)
+    //3 things it can do:
+    //    1) support performer setup
+    //    2) transmit sound to FOH system
+    //    3) provide stage monitoring
 }
 
 Thing 6) Front of House Audio System
@@ -531,7 +576,16 @@ Thing 6) Front of House Audio System
 
 struct FrontOfHouseAudioSystem
 {
-
+    //5 properties:
+    //    1) number of audio channels (int)
+    //    2) number of speakers (int)
+    //    3) outpt wattage (float)
+    //    4) type of mixing console (std::string)
+    //    5) number of equalizer (int)
+    //3 things it can do:
+    //    1) amplify input signals
+    //    2) route sound to audience
+    //    3) adjust volume and EQ settings
 }
 
 Thing 7) Backstage Area
@@ -548,7 +602,16 @@ Thing 7) Backstage Area
 
 struct BackstageArea
 {
-
+    //5 properties:
+    //    1) number of lockers (int)
+    //    2) number of dressing rooms (int)
+    //    3) backstage area size (double)
+    //    4) number of equiment storage shelves (int)
+    //    5) has equipment loading access (bool)
+    //3 things it can do:
+    //    1) provide resting space for performers
+    //    2) store cables and instruments
+    //    3) provide storage for personal belongings
 }
 
 Thing 8) Bar Counter
@@ -565,7 +628,16 @@ Thing 8) Bar Counter
 
 struct BarCounter
 {
-
+    //5 properties:
+    //    1) number of drink options (int)
+    //    2) number of staff members (int)
+    //    3) number of seats (int)
+    //    4) provides non-alcoholic drink (bool)
+    //    5) has merchandise display area (bool)
+    //3 things it can do:
+    //    1) serve drinks to customers
+    //    2) process payments
+    //    3) sell band merchandise
 }
 
 Thing 9) Lighting Rig
@@ -582,7 +654,16 @@ Thing 9) Lighting Rig
 
 struct LightingRig
 {
-
+    //5 properties:
+    //    1) number of traditional lights (int)
+    //    2) number of computer lights (int)
+    //    3) number of control channels (int)
+    //    4) lighting console type (std::string)
+    //    5) height of rig (double)
+    //3 things it can do:
+    //    1) illuminate the stage
+    //    2) change lighting colors and patterns
+    //    3) synchronize lighting with music
 }
 
 Thing 10) Livehouse
@@ -599,7 +680,16 @@ Thing 10) Livehouse
 
 struct Livehouse
 {
-
+    //5 properties:
+    //    1) stage
+    //    2) front of house audio system
+    //    3) backstage area
+    //    4) bar counter
+    //    5) lighting rig
+    //3 things it can do:
+    //    1) host live music performances
+    //    2) serve drinks to attendees
+    //    3) mix sound and control stage lighting
 }
 
 =================
