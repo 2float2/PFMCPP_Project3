@@ -435,10 +435,10 @@ MOVE THEM to the space below this block comment and put them in numerical order
 Thing 1) MIDI Keyboard
 5 properties:
     1) number of keys (int)
-    2) number of knobs (int)
-    3) number of sliders (int)
-    4) number of buttons (int)
-    5) number of pedals (int)
+    2) brand name (std::string)
+    3) has appegiator (bool)
+    4) has step sequencer (bool)
+    5) key size (std::string)
 3 things it can do:
     1) transmit digital signal
     2) control virtual instruments
@@ -446,9 +446,9 @@ Thing 1) MIDI Keyboard
 
 Thing 2) Coffee Machine
 5 properties:
-    1) water tank capacity (int)
-    2) bean hopper capacity (int)
-    3) espresso shot volume (int)
+    1) water tank capacity (float)
+    2) bean hopper capacity (float)
+    3) espresso shot volume (float)
     4) number of brew strength levels (int)
     5) steam temperature (double)
 3 things it can do:
@@ -470,15 +470,15 @@ Thing 3) Skateboard
 
 Thing 4) DAW Project
 5 properties:
-    1) number of audio tracks (int)
-    2) number of MIDI tracks (int)
-    3) number of beats per minute (int)
+    1) time signature (std::string)
+    2) musical mode (std::string)
+    3) key signature (std::string)
     4) number of sections (int)
-    5) number of bars (int)
+    5) is quantized (bool)
 3 things it can do:
     1) play back the composition
     2) apply audio effects
-    3) apply audio effects
+    3) quantize notes
 
 Thing 5) stage
 5 properties:
