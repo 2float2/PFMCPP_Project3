@@ -540,17 +540,17 @@ Thing 9) Lighting Rig
     2) change lighting colors and patterns
     3) synchronize lighting with music
 
-    Thing 10) Livehouse
-    5 properties:
-        1) stage
-        2) front of house audio system
-        3) backstage area
-        4) bar counter
-        5) lighting rig
-    3 things it can do:
-        1) host live music performances
-        2) serve drinks to attendees
-        3) mix sound and control stage lighting
+Thing 10) Livehouse
+5 properties:
+    1) stage
+    2) front of house audio system
+    3) backstage area
+    4) bar counter
+    5) lighting rig
+3 things it can do:
+    1) host live music performances
+    2) serve drinks to attendees
+    3) mix sound and control stage lighting
 =================
 Part 1d - Step 7: Commit
 =================
