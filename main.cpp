@@ -1226,7 +1226,7 @@ Part 1e - Step 15: Assignment
     Clear up any errors or warnings as best you can. 
     if your code produces a [-Wpadded] warning, add '-Wno-padded' to the .replit file with the other compiler flags (-Weverything -Wno-missing-prototypes etc etc)
  */
-
+ 
 /*
 =================
 Part 1e - Step 16: Commit
