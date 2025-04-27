@@ -715,9 +715,12 @@ struct DAWProject //4, Nested UDT
     //    1) play back the composition
     void playBackComposition();
     //    2) apply audio effects
-    void applyAudioEffects(std::string effectName);    
+    void applyAudioEffects(std::string effectName, VirtualStudioTechnology vstInUse);    
     //    3) quantize notes
     void quantizeNotes();
+
+    VirtualStudioTechnology virtualGuitar;
+    
 };
 
 struct Stage //5
@@ -841,9 +844,11 @@ struct LightingRig //9, Nested UDT
     //    1) illuminate the stage
     void illuminateTheStage();
     //    2) change lighting colors and patterns
-    void changeLightingColorsAndPatterns();
+    void changeLightingColorsAndPatterns(LightingConsole consoleInUse);
     //    3) synchronize lighting with music
-    void synchronizeLightingWithMusic();
+    void synchronizeLightingWithMusic(LightingConsole consoleInUse);
+
+    LightingConsole spareConsole;
 };
 
 struct Livehouse //10
