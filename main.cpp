@@ -682,7 +682,7 @@ struct Skateboard //3
     void carveAlongCurves();
 };
 
-struct DAWProject //4
+struct DAWProject //4, Nested UDT
 {
     //5 properties:
     //    1) time signature (std::string)
@@ -695,6 +695,22 @@ struct DAWProject //4
     int numOfSections = 120;
     //    5) is quantized (bool)
     bool isQuantized = true;
+
+    struct VirtualStudioTechnology
+    {
+        //5 properties:
+        std::string vstName = "Superior Drummer";
+        std::string vstManufacturer = "Toontrack";
+        std::string vstType = "virtual instrument";
+        bool supportsMIDI = true;
+        int numOfPresets = 100;
+
+        //3 things it can do:
+        void acceptMIDIInput();
+        void outputAudio(double outputVolume = 80.0);
+        void changePreset(std::string presetName);
+    };
+    
     //3 things it can do:
     //    1) play back the composition
     void playBackComposition();
@@ -791,7 +807,7 @@ struct BarCounter //8
     void sellBandMerchandise();
 };
 
-struct LightingRig //9
+struct LightingRig //9, Nested UDT
 {
     //5 properties:
     //    1) number of traditional lights (int)
@@ -801,9 +817,26 @@ struct LightingRig //9
     //    3) number of control channels (int)
     int numOfControlChannels = 512;
     //    4) lighting console type (std::string)
-    std::string lightingConsoleType = "GrandMA2";
+    std::string lightingConsoleType = "MA Lighting";
     //    5) height of rig (double)
     double heightOfRig = 10.5;
+
+    struct LightingConsole
+    {
+        //5 properties:
+        std::string consoleName = "GrandMA3";
+        int numOfScreens = 3;
+        int numOfFaders = 64;
+        bool hasInternetConnectivity = true;
+        double weightOfConsole = 120.0;
+
+        //3 things it can do:
+        void panAndTiltLights(int lightNumber, double panAngle = 135.0, double tiltAngle = 45.0);
+        void adjustLightIntensity(int lightNumber, double intensity = 100.0);
+        void changeGoboPattern(int lightNumber, std::string patternName = "star");
+        
+    };
+
     //3 things it can do:
     //    1) illuminate the stage
     void illuminateTheStage();
