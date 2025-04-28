@@ -993,7 +993,7 @@ You should see "good to go" in the program output
 
 /*
 =================
-Part 1e - Step 18: Commit
+Part 1e - Step 18: Commit 
 =================
 Now that you've made changes, make a commit!
 Be sure to make the commit message meaningful.
