@@ -83,51 +83,51 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
-            4) 
+            3) horn button
+            4) volume contorl buttons
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) steer the vehicle
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) speedometer
+            2) tachometer
+            3) odometer
+            4) fuel gauge
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) display speed
+            2) display engine RPM
+            3) display fuel level
     
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) air conditioning button
+            2) fan speed knob
+            3) temperature knob
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) turn on air conditioning
+            2) adjust fan speed
+            3) adjust temperature
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) volume knob
+            2) radio station knob
+            3) navigation screen
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) play music
+            2) navigate on the map
+            3) display radio station
 
     Sub Object: Seat 
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) seatbelt
+            2) seat adjustment controls
+            3) headrest
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) adjust seat position
+            2) buckle seatbelt
 */
 
 /*
@@ -196,53 +196,7 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 3)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 4)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 */
 
 /*
@@ -337,17 +291,7 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+
  */
 
  /*
@@ -434,65 +378,7 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
  */
 
 /*
@@ -522,7 +408,7 @@ example:
 
 /*
 =================
-Part 1d - Step 5: Commit
+Part 1d - Step 5: Commit 
 =================
 Now that you've made changes to the code, make a commit!
 Be sure to make the commit message meaningful.
@@ -545,14 +431,126 @@ MOVE THEM to the space below this block comment and put them in numerical order
     simply CUT and PASTE them in the space provided below:
 */
 
-
-
-
-
-
-
-
 /*
+Thing 1) MIDI Keyboard
+5 properties:
+    1) number of keys (int)
+    2) brand name (std::string)
+    3) has arpeggiator (bool)
+    4) has step sequencer (bool)
+    5) key size (std::string)
+3 things it can do:
+    1) transmit digital signal
+    2) control virtual instruments
+    3) trigger loops
+
+Thing 2) Coffee Machine
+5 properties:
+    1) water tank capacity (float)
+    2) bean hopper capacity (float)
+    3) espresso shot volume (float)
+    4) number of brew strength levels (int)
+    5) steam temperature (double)
+3 things it can do:
+    1) grind coffee beans
+    2) brew espresso
+    3) steam milk
+
+Thing 3) Skateboard
+5 properties:
+    1) deck length (double)
+    2) wheel size (float)
+    3) wheel hardness (std::string)
+    4) truck turning angle (int)
+    5) bearing type (std::string)
+3 things it can do:
+    1) perform tricks
+    2) roll over ramps
+    3) carve along curves
+
+Thing 4) DAW Project
+5 properties:
+    1) time signature (std::string)
+    2) musical mode (std::string)
+    3) key signature (std::string)
+    4) number of sections (int)
+    5) is quantized (bool)
+3 things it can do:
+    1) play back the composition
+    2) apply audio effects
+    3) quantize notes
+
+Thing 5) stage
+5 properties:
+    1) number of monitor speakers (int)
+    2) number of microphones (int)
+    3) number of instrument stands (int)
+    4) stage width (double)
+    5) stage depth (double)
+3 things it can do:
+    1) support performer setup
+    2) transmit sound to FOH system
+    3) provide stage monitoring
+
+Thing 6) Front of House Audio System
+5 properties:
+    1) number of audio channels (int)
+    2) number of speakers (int)
+    3) outpt wattage (float)
+    4) type of mixing console (std::string)
+    5) number of equalizer (int)
+3 things it can do:
+    1) amplify input signals
+    2) route sound to audience
+    3) adjust volume and EQ settings
+
+Thing 7) Backstage Area
+5 properties:
+    1) number of lockers (int)
+    2) number of dressing rooms (int)
+    3) backstage area size (double)
+    4) number of equiment storage shelves (int)
+    5) has equipment loading access (bool)
+3 things it can do:
+    1) provide resting space for performers
+    2) store cables and instruments
+    3) provide storage for personal belongings
+
+Thing 8) Bar Counter
+5 properties:
+    1) number of drink options (int)
+    2) number of staff members (int)
+    3) number of seats (int)
+    4) provides non-alcoholic drink (bool)
+    5) has merchandise display area (bool)
+3 things it can do:
+    1) serve drinks to customers
+    2) process payments
+    3) sell band merchandise
+
+Thing 9) Lighting Rig
+5 properties:
+    1) number of traditional lights (int)
+    2) number of computer lights (int)
+    3) number of control channels (int)
+    4) lighting console type (std::string)
+    5) height of rig (double)
+3 things it can do:
+    1) illuminate the stage
+    2) change lighting colors and patterns
+    3) synchronize lighting with music
+
+Thing 10) Livehouse
+5 properties:
+    1) stage
+    2) front of house audio system
+    3) backstage area
+    4) bar counter
+    5) lighting rig
+3 things it can do:
+    1) host live music performances
+    2) serve drinks to attendees
+    3) mix sound and control stage lighting
 =================
 Part 1d - Step 7: Commit
 =================
@@ -618,6 +616,8 @@ struct CarWash  //This is the empty struct, below my plain-English UDT.
 Notice that the struct name 'CarWash' conforms with the Course Coding Standard, described in the Readme.MD
 */
 
+
+    
 /*
 =================
 Part 1e - Step 2: Commit
@@ -655,7 +655,7 @@ struct CarWash
 
 /*
 =================
-Part 1e - Step 4: Commit
+Part 1e - Step 4: Commit 
 =================
 Now that you've made changes, make a commit!
 Be sure to make the commit message meaningful.
@@ -734,7 +734,7 @@ struct CarWash
 };
 /*
 =================
-Part 1e - Step 8: Commit
+Part 1e - Step 8: Commit 
 =================
 Now that you've made changes, make a commit!
 Be sure to make the commit message meaningful.
@@ -971,7 +971,7 @@ Part 1e - Step 15: Assignment
     Clear up any errors or warnings as best you can. 
     if your code produces a [-Wpadded] warning, add '-Wno-padded' to the .replit file with the other compiler flags (-Weverything -Wno-missing-prototypes etc etc)
  */
-
+ 
 /*
 =================
 Part 1e - Step 16: Commit
@@ -993,7 +993,7 @@ You should see "good to go" in the program output
 
 /*
 =================
-Part 1e - Step 18: Commit
+Part 1e - Step 18: Commit 
 =================
 Now that you've made changes, make a commit!
 Be sure to make the commit message meaningful.
@@ -1010,7 +1010,262 @@ Part 1e - Step 19: Request a review
 paste your code below
 */
 
+struct MIDIKeyboard //1
+{
+    //5 properties:
+    //    1) number of keys (int)
+    int numOfKeys = 37;
+    //    2) brand name (std::string)
+    std::string brandName = "Novation Launchkey Mini";
+    //    3) has arpeggiator (bool)
+    bool arpeggiator = true;
+    //    4) has step sequencer (bool)
+    bool stepSequencer = false;
+    //    5) key size (std::string)
+    std::string keySize = "mini";
+    //3 things it can do:
+    //    1) transmit digital signal
+    void transmitDigitalSignal();
+    //    2) control virtual instruments
+    void controlVirtualInstruments(std::string intrumentName);
+    //    3) trigger loops
+    void triggerLoops();
+};
 
+struct CoffeeMachine //2
+{
+    //5 properties:
+    //    1) water tank capacity (float)
+    float waterTankCapacity =1.7f;
+    //    2) bean hopper capacity (float)
+    float beanHopperCapacity = 1.2f;
+    //    3) espresso shot volume (float)
+    float espressoShotVolume = 0.5f;
+    //    4) number of brew strength levels (int)
+    int brewStrength = 3;
+    //    5) steam temperature (double)
+    double steamTemperature = 150.0;
+    //3 things it can do:
+    //    1) grind coffee beans
+    void grindCoffeeBeans();
+    //    2) brew espresso
+    void brewEspresso();
+    //    3) steam milk
+    void steamMilk();
+};
+
+struct Skateboard //3
+{
+    //5 properties:
+    //    1) deck length (double)
+    double deckLengther = 115.0;
+    //    2) wheel size (float)
+    float wheelSize = 89.0f;
+    //    3) wheel hardness (std::string)
+    std::string wheelHardness = "medium";
+    //    4) truck turning angle (int)
+    int truckTurningAngle = 65;
+    //    5) bearing type (std::string)
+    std::string bearingType = "barrel";
+    //3 things it can do:
+    //    1) perform tricks
+    void performTricks(std::string trickName);
+    //    2) roll over ramps
+    void rollOverRamps();
+    //    3) carve along curves
+    void carveAlongCurves();
+};
+
+struct DAWProject //4, Nested UDT
+{
+    //5 properties:
+    //    1) time signature (std::string)
+    std::string timeSignature = "3/4";
+    //    2) musical mode (std::string)
+    std::string musicalMode = "minor";
+    //    3) key signature (std::string)
+    std::string keySignature = "A";
+    //    4) number of sections (int)
+    int numOfSections = 120;
+    //    5) is quantized (bool)
+    bool isQuantized = true;
+
+    struct VirtualStudioTechnology
+    {
+        //5 properties:
+        std::string vstName = "Superior Drummer";
+        std::string vstManufacturer = "Toontrack";
+        std::string vstType = "virtual instrument";
+        bool supportsMIDI = true;
+        int numOfPresets = 100;
+
+        //3 things it can do:
+        void acceptMIDIInput();
+        void outputAudio(double outputVolume = 80.0);
+        void changePreset(std::string presetName);
+    };
+
+    //3 things it can do:
+    //    1) play back the composition
+    void playBackComposition();
+    //    2) apply audio effects
+    void applyAudioEffects(std::string effectName, VirtualStudioTechnology vstInUse);    
+    //    3) quantize notes
+    void quantizeNotes();
+
+    VirtualStudioTechnology virtualGuitar;
+
+};
+
+struct Stage //5
+{
+    //5 properties:
+    //    1) number of monitor speakers (int)
+    int numOfMonitorSpeakers = 10;
+    //    2) number of microphones (int)
+    int numOfMicrophones = 20;
+    //    3) number of instrument stands (int)
+    int numOfInstrumentStands = 20;
+    //    4) stage width (double)
+    double stageWidth = 40;
+    //    5) stage depth (double)
+    double stageDepth =20;
+    //3 things it can do:
+    //    1) support performer setup
+    void supportPerformerSetup();
+    //    2) transmit sound to FOH system
+    void transmitSoundToFOHSystem();
+    //    3) provide stage monitoring
+    void provideStageMonitoring();
+};
+
+struct FrontOfHouseAudioSystem //6
+{
+    //5 properties:
+    //    1) number of audio channels (int)
+    int numOfAudioChannels = 12;
+    //    2) number of speakers (int)
+    int numOfSpeakers = 10;
+    //    3) outpt wattage (float)
+    float outputWattage = 1000.0f;
+    //    4) type of mixing console (std::string)
+    std::string typeOfMixingConsole = "DiGiCo";
+    //    5) number of equalizer (int)
+    //3 things it can do:
+    //    1) amplify input signals
+    void amplifyInputSignals();
+    //    2) route sound to audience
+    void routeSoundToAudience();
+    //    3) adjust volume and EQ settings
+    void adjustVolumeAndEQSettings();
+};
+
+struct BackstageArea //7
+{
+    //5 properties:
+    //    1) number of lockers (int)
+    int numOfLockers = 80;
+    //    2) number of dressing rooms (int)
+    int numOfDressingRooms =3;
+    //    3) backstage area size (double)
+    double backStageSize = 500.0;
+    //    4) number of equiment storage shelves (int)
+    int numOfEquimentStorageShelves = 10;
+    //    5) has equipment loading access (bool)
+    bool hasEquipmentLoadingAccess = true;
+    //3 things it can do:
+    //    1) provide resting space for performers
+    void provideRestingSpaceForPerformers();
+    //    2) store cables and instruments
+    void storeCablesAndInstruments();
+    //    3) provide storage for personal belongings
+    void provideStorageForPersonalBelongings();
+};
+
+struct BarCounter //8
+{
+    //5 properties:
+    //    1) number of drink options (int)
+    int numOfDrinkOptions = 30;
+    //    2) number of staff members (int)
+    int numOfStaffMembers = 6;
+    //    3) number of seats (int)
+    int numOfSeats = 10;
+    //    4) provides non-alcoholic drink (bool)
+    bool providesNonAlcoholicDrink = true;
+    //    5) has merchandise display area (bool)
+    bool hasMerchandiseDisplayArea = true;
+    //3 things it can do:
+    //    1) serve drinks to customers
+    void serveDrinksToCustomers();
+    //    2) process payments
+    void processPayments();
+    //    3) sell band merchandise
+    void sellBandMerchandise();
+};
+
+struct LightingRig //9, Nested UDT
+{
+    //5 properties:
+    //    1) number of traditional lights (int)
+    int numOfTraditionalLights = 12;
+    //    2) number of computer lights (int)
+    int numOfComputerLights = 35;
+    //    3) number of control channels (int)
+    int numOfControlChannels = 512;
+    //    4) lighting console type (std::string)
+    std::string lightingConsoleType = "MA Lighting";
+    //    5) height of rig (double)
+    double heightOfRig = 10.5;
+
+    struct LightingConsole
+    {
+        //5 properties:
+        std::string consoleName = "GrandMA3";
+        int numOfScreens = 3;
+        int numOfFaders = 64;
+        bool hasInternetConnectivity = true;
+        double weightOfConsole = 120.0;
+
+        //3 things it can do:
+        void panAndTiltLights(int lightNumber, double panAngle = 135.0, double tiltAngle = 45.0);
+        void adjustLightIntensity(int lightNumber, double intensity = 100.0);
+        void changeGoboPattern(int lightNumber, std::string patternName = "star");
+
+    };
+
+    //3 things it can do:
+    //    1) illuminate the stage
+    void illuminateTheStage();
+    //    2) change lighting colors and patterns
+    void changeLightingColorsAndPatterns(LightingConsole consoleInUse);
+    //    3) synchronize lighting with music
+    void synchronizeLightingWithMusic(LightingConsole consoleInUse);
+
+    LightingConsole spareConsole;
+};
+
+struct Livehouse //10
+{
+    //5 properties:
+    //    1) stage
+    Stage stage;
+    //    2) front of house audio system
+    FrontOfHouseAudioSystem frontOfHouseAudioSystem;
+    //    3) backstage area
+    BackstageArea backstageArea;
+    //    4) bar counter
+    BarCounter barCounter;
+    //    5) lighting rig
+    LightingRig lightingRig;
+    //3 things it can do:
+    //    1) host live music performances
+    void hostLiveMusicPerformances();
+    //    2) serve drinks to attendees
+    void serveDrinksToAttendees();
+    //    3) mix sound and control stage lighting
+    void mixSoundAndControlStageLighting();
+};
 
 
 
