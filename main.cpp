@@ -109,8 +109,14 @@ struct CarWash
  */
 struct Feet
 {
-    void stepForward();
-    int stepSize();
+    void stepForward()
+    {
+        std::cout << "Step forward" << std::endl;
+    }
+    int stepSize()
+    {
+        return 8;
+    }
 };
 
 struct Person
