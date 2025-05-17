@@ -107,10 +107,47 @@ struct CarWash
     you should be able to deduce the return type of those functions based on their usage in Person::run()
     You'll need to insert the Person struct from the video in the space below.
  */
+struct Feet
+{
+    void stepForward()
+    {
+        std::cout << "Step forward" << std::endl;
+    }
+    int stepSize()
+    {
+        return 8;
+    }
+};
 
+struct Person
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled;
+    Feet leftFoot;
+    Feet rightFoot;
 
+    void run(int howFast, bool startWithLeftFoot);
+};
 
-
+void Person::run(int howFast, bool startWithLeftFoot)
+{
+    if(startWithLeftFoot == true)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTraveled += 
+        leftFoot.stepSize()* howFast + rightFoot.stepSize()* howFast;
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -134,266 +171,346 @@ struct CarWash
 
 struct MIDIKeyboard //1
 {
-    //5 properties:
-    //    1) number of keys (int)
     int numOfKeys = 37;
-    //    2) brand name (std::string)
     std::string brandName = "Novation Launchkey Mini";
-    //    3) has arpeggiator (bool)
     bool arpeggiator = true;
-    //    4) has step sequencer (bool)
     bool stepSequencer = false;
-    //    5) key size (std::string)
     std::string keySize = "mini";
-    //3 things it can do:
-    //    1) transmit digital signal
+
     void transmitDigitalSignal();
-    //    2) control virtual instruments
     void controlVirtualInstruments(std::string intrumentName);
-    //    3) trigger loops
     void triggerLoops();
 };
 
+void MIDIKeyboard::transmitDigitalSignal()
+{
+    std::cout << "Transmit digital signal" << std::endl;
+}
+
+void MIDIKeyboard::controlVirtualInstruments(std::string intrumentName)
+{
+    std::cout << "Adjust " << intrumentName << std::endl;
+}
+
+void MIDIKeyboard::triggerLoops()
+{
+    std::cout << "Trigger loops" << std::endl;
+}
+
 struct CoffeeMachine //2
 {
-    //5 properties:
-    //    1) water tank capacity (float)
     float waterTankCapacity =1.7f;
-    //    2) bean hopper capacity (float)
     float beanHopperCapacity = 1.2f;
-    //    3) espresso shot volume (float)
     float espressoShotVolume = 0.5f;
-    //    4) number of brew strength levels (int)
     int brewStrength = 3;
-    //    5) steam temperature (double)
     double steamTemperature = 150.0;
-    //3 things it can do:
-    //    1) grind coffee beans
+
     void grindCoffeeBeans();
-    //    2) brew espresso
     void brewEspresso();
-    //    3) steam milk
     void steamMilk();
 };
 
+void CoffeeMachine::grindCoffeeBeans()
+{
+    std::cout << "Grind coffee beans" << std::endl;
+}
+
+void CoffeeMachine::brewEspresso()
+{
+    std::cout << "Brew espresso" << std::endl;
+}
+
+void CoffeeMachine::steamMilk()
+{
+    std::cout << "Steam milk" << std::endl;
+}
+
 struct Skateboard //3
 {
-    //5 properties:
-    //    1) deck length (double)
     double deckLengther = 115.0;
-    //    2) wheel size (float)
     float wheelSize = 89.0f;
-    //    3) wheel hardness (std::string)
     std::string wheelHardness = "medium";
-    //    4) truck turning angle (int)
     int truckTurningAngle = 65;
-    //    5) bearing type (std::string)
     std::string bearingType = "barrel";
-    //3 things it can do:
-    //    1) perform tricks
+
     void performTricks(std::string trickName);
-    //    2) roll over ramps
     void rollOverRamps();
-    //    3) carve along curves
     void carveAlongCurves();
 };
 
+void Skateboard::performTricks(std::string trickName)
+{
+    std::cout << "Perform " << trickName << std::endl;
+}
+
+void Skateboard::rollOverRamps()
+{
+    std::cout << "Roll over ramps" << std::endl;
+}
+
+void Skateboard::carveAlongCurves()
+{
+    std::cout << "Carve along curves" << std::endl;
+}
+
 struct DAWProject //4, Nested UDT
 {
-    //5 properties:
-    //    1) time signature (std::string)
     std::string timeSignature = "3/4";
-    //    2) musical mode (std::string)
     std::string musicalMode = "minor";
-    //    3) key signature (std::string)
     std::string keySignature = "A";
-    //    4) number of sections (int)
     int numOfSections = 120;
-    //    5) is quantized (bool)
     bool isQuantized = true;
 
     struct VirtualStudioTechnology
     {
-        //5 properties:
         std::string vstName = "Superior Drummer";
         std::string vstManufacturer = "Toontrack";
         std::string vstType = "virtual instrument";
         bool supportsMIDI = true;
         int numOfPresets = 100;
 
-        //3 things it can do:
         void acceptMIDIInput();
         void outputAudio(double outputVolume = 80.0);
         void changePreset(std::string presetName);
     };
 
-    //3 things it can do:
-    //    1) play back the composition
+    
     void playBackComposition();
-    //    2) apply audio effects
     void applyAudioEffects(std::string effectName, VirtualStudioTechnology vstInUse);    
-    //    3) quantize notes
     void quantizeNotes();
 
     VirtualStudioTechnology virtualGuitar;
 
 };
 
+void DAWProject::playBackComposition()
+{
+    std::cout << "Play back composition" << std::endl;
+}
+
+void DAWProject::applyAudioEffects(std::string effectName, VirtualStudioTechnology vstInUse)
+{
+    std::cout << "Apply " << effectName << " of " << vstInUse.vstName << std::endl;
+}
+
+void DAWProject::quantizeNotes()
+{
+    std::cout << "Quantize notes" << std::endl;
+}
+
+void DAWProject::VirtualStudioTechnology::acceptMIDIInput()
+{
+    std::cout << "Accept MIDI input" << std::endl;
+}
+
+void DAWProject::VirtualStudioTechnology::outputAudio(double outputVolume)
+{
+    std::cout << "Output audio at " << outputVolume << "db" << std::endl;
+}
+
+void DAWProject::VirtualStudioTechnology::changePreset(std::string presetName)
+{
+    std::cout << "Change preset to" << presetName << std::endl;
+}
+
 struct Stage //5
 {
-    //5 properties:
-    //    1) number of monitor speakers (int)
     int numOfMonitorSpeakers = 10;
-    //    2) number of microphones (int)
     int numOfMicrophones = 20;
-    //    3) number of instrument stands (int)
     int numOfInstrumentStands = 20;
-    //    4) stage width (double)
     double stageWidth = 40;
-    //    5) stage depth (double)
     double stageDepth =20;
-    //3 things it can do:
-    //    1) support performer setup
+
     void supportPerformerSetup();
-    //    2) transmit sound to FOH system
     void transmitSoundToFOHSystem();
-    //    3) provide stage monitoring
     void provideStageMonitoring();
 };
 
+void Stage::supportPerformerSetup()
+{
+    std::cout << "Support performer setup" << std::endl;
+}
+
+void Stage::transmitSoundToFOHSystem()
+{
+    std::cout << "Transmit sound to FOH system" << std::endl;
+}
+
+void Stage::provideStageMonitoring()
+{
+    std::cout << "Provide stage monitoring" << std::endl;
+}
+
 struct FrontOfHouseAudioSystem //6
 {
-    //5 properties:
-    //    1) number of audio channels (int)
     int numOfAudioChannels = 12;
-    //    2) number of speakers (int)
     int numOfSpeakers = 10;
-    //    3) outpt wattage (float)
     float outputWattage = 1000.0f;
-    //    4) type of mixing console (std::string)
-    std::string typeOfMixingConsole = "DiGiCo";
-    //    5) number of equalizer (int)
-    //3 things it can do:
-    //    1) amplify input signals
+    std::string brandName = "DiGiCo";
+    std::string typeOfMixingConsole = "sd12";
+
     void amplifyInputSignals();
-    //    2) route sound to audience
     void routeSoundToAudience();
-    //    3) adjust volume and EQ settings
     void adjustVolumeAndEQSettings();
 };
 
+void FrontOfHouseAudioSystem::amplifyInputSignals()
+{
+    std::cout << "Amplify input signals" << std::endl;
+}
+
+void FrontOfHouseAudioSystem::routeSoundToAudience()
+{
+    std::cout << "Route sound to audience" << std::endl;
+}
+
+void FrontOfHouseAudioSystem::adjustVolumeAndEQSettings()
+{
+    std::cout << "Adjust volume and EQ settings" << std::endl;
+}
+
 struct BackstageArea //7
 {
-    //5 properties:
-    //    1) number of lockers (int)
     int numOfLockers = 80;
-    //    2) number of dressing rooms (int)
     int numOfDressingRooms =3;
-    //    3) backstage area size (double)
     double backStageSize = 500.0;
-    //    4) number of equiment storage shelves (int)
     int numOfEquimentStorageShelves = 10;
-    //    5) has equipment loading access (bool)
     bool hasEquipmentLoadingAccess = true;
-    //3 things it can do:
-    //    1) provide resting space for performers
+    
     void provideRestingSpaceForPerformers();
-    //    2) store cables and instruments
     void storeCablesAndInstruments();
-    //    3) provide storage for personal belongings
     void provideStorageForPersonalBelongings();
 };
 
+void BackstageArea::provideRestingSpaceForPerformers()
+{
+    std::cout << "Provide resting space for performers" << std::endl;
+}
+
+void BackstageArea::storeCablesAndInstruments()
+{
+    std::cout << "Store cables and instruments" << std::endl;
+}
+
+void BackstageArea::provideStorageForPersonalBelongings()
+{
+    std::cout << "Provide storage for personal belongings" << std::endl;
+}
+
 struct BarCounter //8
 {
-    //5 properties:
-    //    1) number of drink options (int)
     int numOfDrinkOptions = 30;
-    //    2) number of staff members (int)
     int numOfStaffMembers = 6;
-    //    3) number of seats (int)
     int numOfSeats = 10;
-    //    4) provides non-alcoholic drink (bool)
     bool providesNonAlcoholicDrink = true;
-    //    5) has merchandise display area (bool)
     bool hasMerchandiseDisplayArea = true;
-    //3 things it can do:
-    //    1) serve drinks to customers
+    
     void serveDrinksToCustomers();
-    //    2) process payments
     void processPayments();
-    //    3) sell band merchandise
     void sellBandMerchandise();
 };
 
+void BarCounter::serveDrinksToCustomers()
+{
+    std::cout << "Serve drinks to customers" << std::endl;
+}
+
+void BarCounter::processPayments()
+{
+    std::cout << "Process payments" << std::endl;
+}
+
+void BarCounter::sellBandMerchandise()
+{
+    std::cout << "Sell band merchandise" << std::endl;
+}
+
 struct LightingRig //9, Nested UDT
 {
-    //5 properties:
-    //    1) number of traditional lights (int)
     int numOfTraditionalLights = 12;
-    //    2) number of computer lights (int)
     int numOfComputerLights = 35;
-    //    3) number of control channels (int)
     int numOfControlChannels = 512;
-    //    4) lighting console type (std::string)
     std::string lightingConsoleType = "MA Lighting";
-    //    5) height of rig (double)
     double heightOfRig = 10.5;
 
     struct LightingConsole
     {
-        //5 properties:
         std::string consoleName = "GrandMA3";
         int numOfScreens = 3;
         int numOfFaders = 64;
         bool hasInternetConnectivity = true;
         double weightOfConsole = 120.0;
 
-        //3 things it can do:
         void panAndTiltLights(int lightNumber, double panAngle = 135.0, double tiltAngle = 45.0);
         void adjustLightIntensity(int lightNumber, double intensity = 100.0);
         void changeGoboPattern(int lightNumber, std::string patternName = "star");
 
     };
-
-    //3 things it can do:
-    //    1) illuminate the stage
+    
     void illuminateTheStage();
-    //    2) change lighting colors and patterns
     void changeLightingColorsAndPatterns(LightingConsole consoleInUse);
-    //    3) synchronize lighting with music
     void synchronizeLightingWithMusic(LightingConsole consoleInUse);
 
     LightingConsole spareConsole;
 };
 
+void LightingRig::illuminateTheStage()
+{
+    std::cout << "Illuminate the stage" << std::endl;
+}
+
+void LightingRig::changeLightingColorsAndPatterns(LightingConsole consoleInUse)
+{
+    std::cout << "Change lighting colors and patterns with " << consoleInUse.consoleName << std::endl;
+}
+
+void LightingRig::synchronizeLightingWithMusic(LightingConsole consoleInUse)
+{
+    std::cout << "Synchronize lighting with music using " << consoleInUse.consoleName << std::endl;
+}
+
+void LightingRig::LightingConsole::panAndTiltLights(int lightNumber, double panAngle, double tiltAngle)
+{
+    std::cout << "Pan and tilt light " << lightNumber << " to " << panAngle << " and " << tiltAngle << std::endl;
+}
+
+void LightingRig::LightingConsole::adjustLightIntensity(int lightNumber, double intensity)
+{
+    std::cout << "Adjust the intensity of light " << lightNumber << " to " << intensity << std::endl;
+}
+
+void LightingRig::LightingConsole::changeGoboPattern(int lightNumber, std::string patternName)
+{
+    std::cout << "Change the gobo pattern of light " << lightNumber << " to " << patternName << std::endl;
+}
+
 struct Livehouse //10
 {
-    //5 properties:
-    //    1) stage
     Stage stage;
-    //    2) front of house audio system
     FrontOfHouseAudioSystem frontOfHouseAudioSystem;
-    //    3) backstage area
     BackstageArea backstageArea;
-    //    4) bar counter
     BarCounter barCounter;
-    //    5) lighting rig
     LightingRig lightingRig;
-    //3 things it can do:
-    //    1) host live music performances
+    
     void hostLiveMusicPerformances();
-    //    2) serve drinks to attendees
     void serveDrinksToAttendees();
-    //    3) mix sound and control stage lighting
     void mixSoundAndControlStageLighting();
 };
 
+void Livehouse::hostLiveMusicPerformances()
+{
+    std::cout << "Host live music performances" << std::endl;
+}
 
+void Livehouse::serveDrinksToAttendees()
+{
+    std::cout << "Serve drinks to attendees" << std::endl;
+}
 
-
-
-
+void Livehouse::mixSoundAndControlStageLighting()
+{
+    std::cout << "Mix sound and control stage lighting" << std::endl;
+}
 
 int main()
 {
