@@ -145,7 +145,8 @@ void Person::run(int howFast, bool startWithLeftFoot)
         rightFoot.stepForward();
         leftFoot.stepForward();
     }
-    distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize();
+    distanceTraveled += 
+        leftFoot.stepSize()* howFast + rightFoot.stepSize()* howFast;
 }
 
  /*
@@ -181,6 +182,21 @@ struct MIDIKeyboard //1
     void triggerLoops();
 };
 
+void MIDIKeyboard::transmitDigitalSignal()
+{
+    std::cout << "Transmit digital signal" << std::endl;
+}
+
+void MIDIKeyboard::controlVirtualInstruments(std::string intrumentName)
+{
+    std::cout << "Adjust " << intrumentName << std::endl;
+}
+
+void MIDIKeyboard::triggerLoops()
+{
+    std::cout << "Trigger loops" << std::endl;
+}
+
 struct CoffeeMachine //2
 {
     float waterTankCapacity =1.7f;
@@ -194,6 +210,21 @@ struct CoffeeMachine //2
     void steamMilk();
 };
 
+void CoffeeMachine::grindCoffeeBeans()
+{
+    std::cout << "Grind coffee beans" << std::endl;
+}
+
+void CoffeeMachine::brewEspresso()
+{
+    std::cout << "Brew espresso" << std::endl;
+}
+
+void CoffeeMachine::steamMilk()
+{
+    std::cout << "Steam milk" << std::endl;
+}
+
 struct Skateboard //3
 {
     double deckLengther = 115.0;
@@ -206,6 +237,21 @@ struct Skateboard //3
     void rollOverRamps();
     void carveAlongCurves();
 };
+
+void Skateboard::performTricks(std::string trickName)
+{
+    std::cout << "Perform " << trickName << std::endl;
+}
+
+void Skateboard::rollOverRamps()
+{
+    std::cout << "Roll over ramps" << std::endl;
+}
+
+void Skateboard::carveAlongCurves()
+{
+    std::cout << "Carve along curves" << std::endl;
+}
 
 struct DAWProject //4, Nested UDT
 {
@@ -237,6 +283,36 @@ struct DAWProject //4, Nested UDT
 
 };
 
+void DAWProject::playBackComposition()
+{
+    std::cout << "Play back composition" << std::endl;
+}
+
+void DAWProject::applyAudioEffects(std::string effectName, VirtualStudioTechnology vstInUse)
+{
+    std::cout << "Apply " << effectName << " of " << vstInUse.vstName << std::endl;
+}
+
+void DAWProject::quantizeNotes()
+{
+    std::cout << "Quantize notes" << std::endl;
+}
+
+void DAWProject::VirtualStudioTechnology::acceptMIDIInput()
+{
+    std::cout << "Accept MIDI input" << std::endl;
+}
+
+void DAWProject::VirtualStudioTechnology::outputAudio(double outputVolume)
+{
+    std::cout << "Output audio at " << outputVolume << "db" << std::endl;
+}
+
+void DAWProject::VirtualStudioTechnology::changePreset(std::string presetName)
+{
+    std::cout << "Change preset to" << presetName << std::endl;
+}
+
 struct Stage //5
 {
     int numOfMonitorSpeakers = 10;
@@ -249,6 +325,21 @@ struct Stage //5
     void transmitSoundToFOHSystem();
     void provideStageMonitoring();
 };
+
+void Stage::supportPerformerSetup()
+{
+    std::cout << "Support performer setup" << std::endl;
+}
+
+void Stage::transmitSoundToFOHSystem()
+{
+    std::cout << "Transmit sound to FOH system" << std::endl;
+}
+
+void Stage::provideStageMonitoring()
+{
+    std::cout << "Provide stage monitoring" << std::endl;
+}
 
 struct FrontOfHouseAudioSystem //6
 {
@@ -263,6 +354,21 @@ struct FrontOfHouseAudioSystem //6
     void adjustVolumeAndEQSettings();
 };
 
+void FrontOfHouseAudioSystem::amplifyInputSignals()
+{
+    std::cout << "Amplify input signals" << std::endl;
+}
+
+void FrontOfHouseAudioSystem::routeSoundToAudience()
+{
+    std::cout << "Route sound to audience" << std::endl;
+}
+
+void FrontOfHouseAudioSystem::adjustVolumeAndEQSettings()
+{
+    std::cout << "Adjust volume and EQ settings" << std::endl;
+}
+
 struct BackstageArea //7
 {
     int numOfLockers = 80;
@@ -276,6 +382,21 @@ struct BackstageArea //7
     void provideStorageForPersonalBelongings();
 };
 
+void BackstageArea::provideRestingSpaceForPerformers()
+{
+    std::cout << "Provide resting space for performers" << std::endl;
+}
+
+void BackstageArea::storeCablesAndInstruments()
+{
+    std::cout << "Store cables and instruments" << std::endl;
+}
+
+void BackstageArea::provideStorageForPersonalBelongings()
+{
+    std::cout << "Provide storage for personal belongings" << std::endl;
+}
+
 struct BarCounter //8
 {
     int numOfDrinkOptions = 30;
@@ -288,6 +409,21 @@ struct BarCounter //8
     void processPayments();
     void sellBandMerchandise();
 };
+
+void BarCounter::serveDrinksToCustomers()
+{
+    std::cout << "Serve drinks to customers" << std::endl;
+}
+
+void BarCounter::processPayments()
+{
+    std::cout << "Process payments" << std::endl;
+}
+
+void BarCounter::sellBandMerchandise()
+{
+    std::cout << "Sell band merchandise" << std::endl;
+}
 
 struct LightingRig //9, Nested UDT
 {
@@ -318,6 +454,36 @@ struct LightingRig //9, Nested UDT
     LightingConsole spareConsole;
 };
 
+void LightingRig::illuminateTheStage()
+{
+    std::cout << "Illuminate the stage" << std::endl;
+}
+
+void LightingRig::changeLightingColorsAndPatterns(LightingConsole consoleInUse)
+{
+    std::cout << "Change lighting colors and patterns with " << consoleInUse.consoleName << std::endl;
+}
+
+void LightingRig::synchronizeLightingWithMusic(LightingConsole consoleInUse)
+{
+    std::cout << "Synchronize lighting with music using " << consoleInUse.consoleName << std::endl;
+}
+
+void LightingRig::LightingConsole::panAndTiltLights(int lightNumber, double panAngle, double tiltAngle)
+{
+    std::cout << "Pan and tilt light " << lightNumber << " to " << panAngle << " and " << tiltAngle << std::endl;
+}
+
+void LightingRig::LightingConsole::adjustLightIntensity(int lightNumber, double intensity)
+{
+    std::cout << "Adjust the intensity of light " << lightNumber << " to " << intensity << std::endl;
+}
+
+void LightingRig::LightingConsole::changeGoboPattern(int lightNumber, std::string patternName)
+{
+    std::cout << "Change the gobo pattern of light " << lightNumber << " to " << patternName << std::endl;
+}
+
 struct Livehouse //10
 {
     Stage stage;
@@ -331,11 +497,20 @@ struct Livehouse //10
     void mixSoundAndControlStageLighting();
 };
 
+void Livehouse::hostLiveMusicPerformances()
+{
+    std::cout << "Host live music performances" << std::endl;
+}
 
+void Livehouse::serveDrinksToAttendees()
+{
+    std::cout << "Serve drinks to attendees" << std::endl;
+}
 
-
-
-
+void Livehouse::mixSoundAndControlStageLighting()
+{
+    std::cout << "Mix sound and control stage lighting" << std::endl;
+}
 
 int main()
 {
