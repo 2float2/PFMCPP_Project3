@@ -90,7 +90,7 @@ struct MIDIKeyboard //1
 
 MIDIKeyboard::MIDIKeyboard()
 {
-    std::cout << "MIDIKeyboard being constructed!" << std::endl;
+    std::cout << "\nMIDIKeyboard being constructed!" << std::endl;
 }
 
 void MIDIKeyboard::transmitDigitalSignal()
@@ -125,7 +125,7 @@ struct CoffeeMachine //2
 
 CoffeeMachine::CoffeeMachine()
 {
-    std::cout << "CoffeeMachine being constructed!" << std::endl;
+    std::cout << "\nCoffeeMachine being constructed!" << std::endl;
 }
 
 void CoffeeMachine::grindCoffeeBeans()
@@ -160,7 +160,7 @@ struct Skateboard //3
 
 Skateboard::Skateboard()
 {
-    std::cout << "Skateboard being construted!" << std::endl;
+    std::cout << "\nSkateboard being construted!" << std::endl;
 }
 
 void Skateboard::performTricks(std::string trickName)
@@ -212,14 +212,14 @@ struct DAWProject //4, Nested UDT
 
 };
 
+DAWProject::VirtualStudioTechnology::VirtualStudioTechnology()
+{
+    std::cout << "\nVirtualStudioTechnology being constructed!" << std::endl;
+}
+
 DAWProject::DAWProject()
 {
     std::cout << "DAWProject being constructed!" << std::endl;
-}
-
-DAWProject::VirtualStudioTechnology::VirtualStudioTechnology()
-{
-    std::cout << "VirtualStudioTechnology being constructed!" << std::endl;
 }
 
 void DAWProject::playBackComposition()
@@ -269,7 +269,7 @@ struct Stage //5
 
 Stage::Stage()
 {
-    std::cout << "Stage being construted!" << std::endl;
+    std::cout << "\nStage being construted!" << std::endl;
 }
 
 void Stage::supportPerformerSetup()
@@ -304,7 +304,7 @@ struct FrontOfHouseAudioSystem //6
 
 FrontOfHouseAudioSystem::FrontOfHouseAudioSystem()
 {
-    std::cout << "FrontOfHouseAudioSystem being construted!" << std::endl;
+    std::cout << "\nFrontOfHouseAudioSystem being construted!" << std::endl;
 }
 
 void FrontOfHouseAudioSystem::amplifyInputSignals()
@@ -339,7 +339,7 @@ struct BackstageArea //7
 
 BackstageArea::BackstageArea()
 {
-    std::cout << "BackstageArea being constructed!" << std::endl;
+    std::cout << "\nBackstageArea being constructed!" << std::endl;
 }
 
 void BackstageArea::provideRestingSpaceForPerformers()
@@ -374,7 +374,7 @@ struct BarCounter //8
 
 BarCounter::BarCounter()
 {
-    std::cout << "BarCounter being constructed!" << std::endl;
+    std::cout << "\nBarCounter being constructed!" << std::endl;
 }
 
 void BarCounter::serveDrinksToCustomers()
@@ -422,17 +422,17 @@ struct LightingRig //9, Nested UDT
     void changeLightingColorsAndPatterns(LightingConsole consoleInUse);
     void synchronizeLightingWithMusic(LightingConsole consoleInUse);
 
-    LightingConsole spareConsole;
+    LightingConsole mainConsole;
 };
+
+LightingRig::LightingConsole::LightingConsole()
+{
+    std::cout << "\nLightingConsole being constructed!" << std::endl;
+}
 
 LightingRig::LightingRig()
 {
     std::cout << "LighitngRig being constructed!" << std::endl;
-}
-
-LightingRig::LightingConsole::LightingConsole()
-{
-    std::cout << "LightingConsole being constructed!" << std::endl;
 }
 
 void LightingRig::illuminateTheStage()
@@ -482,7 +482,7 @@ struct Livehouse //10
 
 Livehouse::Livehouse()
 {
-    std::cout << "Livehouse being constructed!" << std::endl;
+    std::cout << "\nLivehouse being constructed!" << std::endl;
 }
 
 void Livehouse::hostLiveMusicPerformances()
@@ -504,8 +504,67 @@ int main()
 {
     Example::main();
 
-    //add your ocde here:
+    //add your code here:
+    MIDIKeyboard mdk;
+    mdk.transmitDigitalSignal();
+    mdk.controlVirtualInstruments("virtual cello");      
+    std::cout << 
+    mdk.triggerLoops();
+
+    CoffeeMachine cfm;
+    cfm.grindCoffeeBeans();
+    cfm.brewEspresso();
+    cfm.steamMilk();
+
+    Skateboard skb;
+    skb.performTricks("Peterpan");
+    skb.rollOverRamps();
+    skb.carveAlongCurves();
+
+    DAWProject dawp;
+    dawp.playBackComposition();
+    dawp.applyAudioEffects("reverb", dawp.virtualGuitar);
+    dawp.quantizeNotes();
     
+    DAWProject::VirtualStudioTechnology vst;
+    vst.acceptMIDIInput();
+    vst.outputAudio();
+    vst.changePreset("Punk");
+
+    Stage stg;
+    stg.supportPerformerSetup();
+    stg.transmitSoundToFOHSystem();
+    stg.provideStageMonitoring();
+
+    FrontOfHouseAudioSystem foh;
+    foh.amplifyInputSignals();
+    foh.routeSoundToAudience();
+    foh.adjustVolumeAndEQSettings();
+
+    BackstageArea bsa;
+    bsa.provideRestingSpaceForPerformers();
+    bsa.storeCablesAndInstruments();
+    bsa.provideStorageForPersonalBelongings();
+
+    BarCounter bc;
+    bc.serveDrinksToCustomers();
+    bc.processPayments();
+    bc.sellBandMerchandise();
+
+    LightingRig ltr;
+    ltr.illuminateTheStage();
+    ltr.changeLightingColorsAndPatterns(ltr.mainConsole);
+    ltr.synchronizeLightingWithMusic(ltr.mainConsole);
+
+    LightingRig::LightingConsole lc;
+    lc.panAndTiltLights(5, 135.0, 60.0);
+    lc.adjustLightIntensity(1, 100.0);
+    lc.changeGoboPattern(2, "star");
+
+    Livehouse lvh;
+    lvh.hostLiveMusicPerformances();
+    lvh.serveDrinksToAttendees();
+    lvh.mixSoundAndControlStageLighting();
     
     std::cout << "good to go!" << std::endl;
 }
