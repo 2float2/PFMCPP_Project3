@@ -505,6 +505,7 @@ int main()
     Example::main();
 
     //add your code here:
+    std::cout << "----------------\n";
     MIDIKeyboard mdk;
     std::cout << "----------------\n";
     
