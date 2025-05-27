@@ -75,6 +75,8 @@ int main()
 
 struct MIDIKeyboard //1
 {
+    MIDIKeyboard();
+
     int numOfKeys = 37;
     std::string brandName = "Novation Launchkey Mini";
     bool arpeggiator = true;
@@ -86,9 +88,14 @@ struct MIDIKeyboard //1
     void triggerLoops();
 };
 
+MIDIKeyboard::MIDIKeyboard()
+{
+    std::cout << "MIDIKeyboard being constructed!" << std::endl;
+}
+
 void MIDIKeyboard::transmitDigitalSignal()
 {
-    std::cout << "Transmit digital signal" << std::endl;
+    std::cout << "Transmit digital signal!" << std::endl;
 }
 
 void MIDIKeyboard::controlVirtualInstruments(std::string intrumentName)
@@ -103,6 +110,8 @@ void MIDIKeyboard::triggerLoops()
 
 struct CoffeeMachine //2
 {
+    CoffeeMachine();
+
     float waterTankCapacity =1.7f;
     float beanHopperCapacity = 1.2f;
     float espressoShotVolume = 0.5f;
@@ -113,6 +122,11 @@ struct CoffeeMachine //2
     void brewEspresso();
     void steamMilk();
 };
+
+CoffeeMachine::CoffeeMachine()
+{
+    std::cout << "CoffeeMachine being constructed!" << std::endl;
+}
 
 void CoffeeMachine::grindCoffeeBeans()
 {
@@ -131,6 +145,8 @@ void CoffeeMachine::steamMilk()
 
 struct Skateboard //3
 {
+    Skateboard();
+
     double deckLengther = 115.0;
     float wheelSize = 89.0f;
     std::string wheelHardness = "medium";
@@ -141,6 +157,11 @@ struct Skateboard //3
     void rollOverRamps();
     void carveAlongCurves();
 };
+
+Skateboard::Skateboard()
+{
+    std::cout << "Skateboard being construted!" << std::endl;
+}
 
 void Skateboard::performTricks(std::string trickName)
 {
@@ -159,6 +180,8 @@ void Skateboard::carveAlongCurves()
 
 struct DAWProject //4, Nested UDT
 {
+    DAWProject();
+
     std::string timeSignature = "3/4";
     std::string musicalMode = "minor";
     std::string keySignature = "A";
@@ -167,6 +190,8 @@ struct DAWProject //4, Nested UDT
 
     struct VirtualStudioTechnology
     {
+        VirtualStudioTechnology();
+
         std::string vstName = "Superior Drummer";
         std::string vstManufacturer = "Toontrack";
         std::string vstType = "virtual instrument";
@@ -186,6 +211,16 @@ struct DAWProject //4, Nested UDT
     VirtualStudioTechnology virtualGuitar;
 
 };
+
+DAWProject::DAWProject()
+{
+    std::cout << "DAWProject being constructed!" << std::endl;
+}
+
+DAWProject::VirtualStudioTechnology::VirtualStudioTechnology()
+{
+    std::cout << "VirtualStudioTechnology being constructed!" << std::endl;
+}
 
 void DAWProject::playBackComposition()
 {
@@ -219,6 +254,8 @@ void DAWProject::VirtualStudioTechnology::changePreset(std::string presetName)
 
 struct Stage //5
 {
+    Stage();
+
     int numOfMonitorSpeakers = 10;
     int numOfMicrophones = 20;
     int numOfInstrumentStands = 20;
@@ -229,6 +266,11 @@ struct Stage //5
     void transmitSoundToFOHSystem();
     void provideStageMonitoring();
 };
+
+Stage::Stage()
+{
+    std::cout << "Stage being construted!" << std::endl;
+}
 
 void Stage::supportPerformerSetup()
 {
@@ -247,6 +289,8 @@ void Stage::provideStageMonitoring()
 
 struct FrontOfHouseAudioSystem //6
 {
+    FrontOfHouseAudioSystem();
+
     int numOfAudioChannels = 12;
     int numOfSpeakers = 10;
     float outputWattage = 1000.0f;
@@ -257,6 +301,11 @@ struct FrontOfHouseAudioSystem //6
     void routeSoundToAudience();
     void adjustVolumeAndEQSettings();
 };
+
+FrontOfHouseAudioSystem::FrontOfHouseAudioSystem()
+{
+    std::cout << "FrontOfHouseAudioSystem being construted!" << std::endl;
+}
 
 void FrontOfHouseAudioSystem::amplifyInputSignals()
 {
@@ -275,6 +324,8 @@ void FrontOfHouseAudioSystem::adjustVolumeAndEQSettings()
 
 struct BackstageArea //7
 {
+    BackstageArea();
+
     int numOfLockers = 80;
     int numOfDressingRooms =3;
     double backStageSize = 500.0;
@@ -285,6 +336,11 @@ struct BackstageArea //7
     void storeCablesAndInstruments();
     void provideStorageForPersonalBelongings();
 };
+
+BackstageArea::BackstageArea()
+{
+    std::cout << "BackstageArea being constructed!" << std::endl;
+}
 
 void BackstageArea::provideRestingSpaceForPerformers()
 {
@@ -303,6 +359,8 @@ void BackstageArea::provideStorageForPersonalBelongings()
 
 struct BarCounter //8
 {
+    BarCounter();
+    
     int numOfDrinkOptions = 30;
     int numOfStaffMembers = 6;
     int numOfSeats = 10;
@@ -313,6 +371,11 @@ struct BarCounter //8
     void processPayments();
     void sellBandMerchandise();
 };
+
+BarCounter::BarCounter()
+{
+    std::cout << "BarCounter being constructed!" << std::endl;
+}
 
 void BarCounter::serveDrinksToCustomers()
 {
@@ -331,6 +394,8 @@ void BarCounter::sellBandMerchandise()
 
 struct LightingRig //9, Nested UDT
 {
+    LightingRig();
+
     int numOfTraditionalLights = 12;
     int numOfComputerLights = 35;
     int numOfControlChannels = 512;
@@ -339,6 +404,8 @@ struct LightingRig //9, Nested UDT
 
     struct LightingConsole
     {
+        LightingConsole();
+
         std::string consoleName = "GrandMA3";
         int numOfScreens = 3;
         int numOfFaders = 64;
@@ -357,6 +424,16 @@ struct LightingRig //9, Nested UDT
 
     LightingConsole spareConsole;
 };
+
+LightingRig::LightingRig()
+{
+    std::cout << "LighitngRig being constructed!" << std::endl;
+}
+
+LightingRig::LightingConsole::LightingConsole()
+{
+    std::cout << "LightingConsole being constructed!" << std::endl;
+}
 
 void LightingRig::illuminateTheStage()
 {
@@ -390,6 +467,8 @@ void LightingRig::LightingConsole::changeGoboPattern(int lightNumber, std::strin
 
 struct Livehouse //10
 {
+    Livehouse();
+
     Stage stage;
     FrontOfHouseAudioSystem frontOfHouseAudioSystem;
     BackstageArea backstageArea;
@@ -400,6 +479,11 @@ struct Livehouse //10
     void serveDrinksToAttendees();
     void mixSoundAndControlStageLighting();
 };
+
+Livehouse::Livehouse()
+{
+    std::cout << "Livehouse being constructed!" << std::endl;
+}
 
 void Livehouse::hostLiveMusicPerformances()
 {
