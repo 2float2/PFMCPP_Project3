@@ -45,25 +45,26 @@ struct MIDIKeyboard //1
 {
     MIDIKeyboard();
 
-    int numOfKeys = 37;
+    std::string keySize;
+    int numOfKeys;
     std::string brandName = "Novation Launchkey Mini";
-    bool arpeggiator = true;
-    bool stepSequencer = false;
-    std::string keySize = "mini";
+    bool arpeggiator { true };
+    bool stepSequencer { false };
+    
 
     void transmitDigitalSignal();
     void controlVirtualInstruments(std::string intrumentName);
     void triggerLoops();
 };
 
-MIDIKeyboard::MIDIKeyboard()
+MIDIKeyboard::MIDIKeyboard() : keySize("mini"), numOfKeys(37)
 {
     std::cout << "\nMIDIKeyboard being constructed!" << std::endl;
 }
 
 void MIDIKeyboard::transmitDigitalSignal()
 {
-    std::cout << "\nTransmit digital signal!" << std::endl;
+    std::cout << "\n" << brandName << " transmit digital signal!" << std::endl;
 }
 
 void MIDIKeyboard::controlVirtualInstruments(std::string intrumentName)
@@ -80,18 +81,18 @@ struct CoffeeMachine //2
 {
     CoffeeMachine();
 
-    float waterTankCapacity =1.7f;
-    float beanHopperCapacity = 1.2f;
-    float espressoShotVolume = 0.5f;
-    int brewStrength = 3;
-    double steamTemperature = 150.0;
+    float waterTankCapacity;
+    float beanHopperCapacity { 1.2f };
+    float espressoShotVolume { 0.5f };
+    int brewStrength { 3 };
+    double steamTemperature;
 
     void grindCoffeeBeans();
     void brewEspresso();
     void steamMilk();
 };
 
-CoffeeMachine::CoffeeMachine()
+CoffeeMachine::CoffeeMachine() : waterTankCapacity(1.7f), steamTemperature(150.0)
 {
     std::cout << "\nCoffeeMachine being constructed!" << std::endl;
 }
@@ -108,32 +109,33 @@ void CoffeeMachine::brewEspresso()
 
 void CoffeeMachine::steamMilk()
 {
-    std::cout << "\nSteam milk" << std::endl;
+    std::cout << "\nSteam milk at " << steamTemperature << " degrees." << std::endl;
 }
 
 struct Skateboard //3
 {
     Skateboard();
 
-    double deckLength = 115.0;
-    float wheelSize = 89.0f;
-    std::string wheelHardness = "medium";
-    int truckTurningAngle = 65;
-    std::string bearingType = "barrel";
+    double deckLength;
+    float wheelSize;
+    std::string wheelHardness;
+    int truckTurningAngle { 65 };
+    std::string bearingType { "barrel" };
 
     void performTricks(std::string trickName);
     void rollOverRamps();
     void carveAlongCurves();
 };
 
-Skateboard::Skateboard()
+Skateboard::Skateboard() : deckLength(115.0), wheelSize(89.0f), wheelHardness("medium")
 {
     std::cout << "\nSkateboard being construted!" << std::endl;
 }
 
 void Skateboard::performTricks(std::string trickName)
 {
-    std::cout << "\nPerform " << trickName << std::endl;
+    std::cout << "\nPerform " << trickName << " on a " << deckLength << " mm long board." << std::endl;
+
 }
 
 void Skateboard::rollOverRamps()
