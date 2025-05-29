@@ -152,21 +152,21 @@ struct DAWProject //4, Nested UDT
 {
     DAWProject();
 
-    std::string timeSignature = "3/4";
-    std::string musicalMode = "minor";
-    std::string keySignature = "A";
-    int numOfSections = 120;
-    bool isQuantized = true;
+    std::string timeSignature { "3/4" };
+    std::string musicalMode = { "minor" };
+    std::string keySignature = { "A" };
+    int numOfSections;
+    bool isQuantized;
 
     struct VirtualStudioTechnology
     {
         VirtualStudioTechnology();
 
-        std::string vstName = "Superior Drummer";
-        std::string vstManufacturer = "Toontrack";
-        std::string vstType = "virtual instrument";
-        bool supportsMIDI = true;
-        int numOfPresets = 100;
+        std::string vstName { "Superior Drummer" };
+        std::string vstManufacturer { "Toontrack" };
+        std::string vstType { "virtual instrument" };
+        bool supportsMIDI;
+        int numOfPresets;
 
         void acceptMIDIInput();
         void outputAudio(double outputVolume = 80.0);
@@ -182,12 +182,12 @@ struct DAWProject //4, Nested UDT
 
 };
 
-DAWProject::VirtualStudioTechnology::VirtualStudioTechnology()
+DAWProject::VirtualStudioTechnology::VirtualStudioTechnology() : supportsMIDI(true), numOfPresets(100)
 {
     std::cout << "\nVirtualStudioTechnology being constructed!" << std::endl;
 }
 
-DAWProject::DAWProject()
+DAWProject::DAWProject() : numOfSections(120), isQuantized(true)
 {
     std::cout << "\nDAWProject being constructed!" << std::endl;
 }
@@ -204,12 +204,12 @@ void DAWProject::applyAudioEffects(std::string effectName, VirtualStudioTechnolo
 
 void DAWProject::quantizeNotes()
 {
-    std::cout << "\nQuantize notes" << std::endl;
+    std::cout << "\nAre the MIDI notes quantized? " << (isQuantized? "Yes":"No") << std::endl;
 }
 
 void DAWProject::VirtualStudioTechnology::acceptMIDIInput()
 {
-    std::cout << "\nAccept MIDI input" << std::endl;
+    std::cout << "\nCurrent VST accepts MIDI input? " << (supportsMIDI? "Yes":"No") << std::endl;
 }
 
 void DAWProject::VirtualStudioTechnology::outputAudio(double outputVolume)
