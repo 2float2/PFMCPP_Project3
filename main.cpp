@@ -38,32 +38,33 @@ int main()
 }
 
 //call Example::main()
-
-
-
 struct MIDIKeyboard //1
 {
     MIDIKeyboard();
 
-    int numOfKeys = 37;
-    std::string brandName = "Novation Launchkey Mini";
+    int numOfKeys;
+    std::string keySize;
+    std::string brandName;
     bool arpeggiator = true;
     bool stepSequencer = false;
-    std::string keySize = "mini";
+    
 
     void transmitDigitalSignal();
     void controlVirtualInstruments(std::string intrumentName);
     void triggerLoops();
 };
 
-MIDIKeyboard::MIDIKeyboard()
+MIDIKeyboard::MIDIKeyboard() :
+numOfKeys(37),
+keySize("mini")
 {
+    brandName = "Novation Launchkey Mini";
     std::cout << "\nMIDIKeyboard being constructed!" << std::endl;
 }
 
 void MIDIKeyboard::transmitDigitalSignal()
 {
-    std::cout << "\nTransmit digital signal!" << std::endl;
+    std::cout << "\n" << brandName << " transmit digital signal!" << std::endl;
 }
 
 void MIDIKeyboard::controlVirtualInstruments(std::string intrumentName)
@@ -80,10 +81,8 @@ struct CoffeeMachine //2
 {
     CoffeeMachine();
 
-    float waterTankCapacity =1.7f;
-    float beanHopperCapacity = 1.2f;
-    float espressoShotVolume = 0.5f;
-    int brewStrength = 3;
+    float waterTankCapacity, beanHopperCapacity, espressoShotVolume;
+    int brewStrength;
     double steamTemperature = 150.0;
 
     void grindCoffeeBeans();
@@ -91,7 +90,11 @@ struct CoffeeMachine //2
     void steamMilk();
 };
 
-CoffeeMachine::CoffeeMachine()
+CoffeeMachine::CoffeeMachine() :
+waterTankCapacity(1.7f),
+beanHopperCapacity(1.2f),
+espressoShotVolume(0.5f),
+brewStrength(3)
 {
     std::cout << "\nCoffeeMachine being constructed!" << std::endl;
 }
@@ -108,17 +111,17 @@ void CoffeeMachine::brewEspresso()
 
 void CoffeeMachine::steamMilk()
 {
-    std::cout << "\nSteam milk" << std::endl;
+    std::cout << "\nSteam milk at " << steamTemperature << " degrees" << std::endl;
 }
 
 struct Skateboard //3
 {
     Skateboard();
 
-    double deckLength = 115.0;
-    float wheelSize = 89.0f;
-    std::string wheelHardness = "medium";
     int truckTurningAngle = 65;
+    float wheelSize;
+    double deckLength;
+    std::string wheelHardness;
     std::string bearingType = "barrel";
 
     void performTricks(std::string trickName);
@@ -126,14 +129,18 @@ struct Skateboard //3
     void carveAlongCurves();
 };
 
-Skateboard::Skateboard()
+Skateboard::Skateboard() :
+wheelSize(89.0f),
+deckLength(115.0),
+wheelHardness("medium")
 {
     std::cout << "\nSkateboard being construted!" << std::endl;
 }
 
 void Skateboard::performTricks(std::string trickName)
 {
-    std::cout << "\nPerform " << trickName << std::endl;
+    std::cout << "\nPerform " << trickName << " on a " << deckLength << " mm long board" << std::endl;
+
 }
 
 void Skateboard::rollOverRamps()
@@ -153,18 +160,18 @@ struct DAWProject //4, Nested UDT
     std::string timeSignature = "3/4";
     std::string musicalMode = "minor";
     std::string keySignature = "A";
-    int numOfSections = 120;
-    bool isQuantized = true;
+    int numOfSections;
+    bool isQuantized;
 
     struct VirtualStudioTechnology
     {
         VirtualStudioTechnology();
 
-        std::string vstName = "Superior Drummer";
-        std::string vstManufacturer = "Toontrack";
-        std::string vstType = "virtual instrument";
+        std::string vstName;
+        std::string vstManufacturer;
+        std::string vstType;
         bool supportsMIDI = true;
-        int numOfPresets = 100;
+        int numOfPresets;
 
         void acceptMIDIInput();
         void outputAudio(double outputVolume = 80.0);
@@ -180,12 +187,18 @@ struct DAWProject //4, Nested UDT
 
 };
 
-DAWProject::VirtualStudioTechnology::VirtualStudioTechnology()
+DAWProject::VirtualStudioTechnology::VirtualStudioTechnology() :
+vstName("Superior Drummer"),
+vstManufacturer("Toontrack"),
+vstType("virtual instrument")
 {
+    numOfPresets = 100;
     std::cout << "\nVirtualStudioTechnology being constructed!" << std::endl;
 }
 
-DAWProject::DAWProject()
+DAWProject::DAWProject() :
+numOfSections(120),
+isQuantized(true)
 {
     std::cout << "\nDAWProject being constructed!" << std::endl;
 }
@@ -202,12 +215,12 @@ void DAWProject::applyAudioEffects(std::string effectName, VirtualStudioTechnolo
 
 void DAWProject::quantizeNotes()
 {
-    std::cout << "\nQuantize notes" << std::endl;
+    std::cout << "\nAre the MIDI notes quantized? " << (isQuantized? "Yes":"No") << std::endl;
 }
 
 void DAWProject::VirtualStudioTechnology::acceptMIDIInput()
 {
-    std::cout << "\nAccept MIDI input" << std::endl;
+    std::cout << "\nCurrent VST accepts MIDI input? " << (supportsMIDI? "Yes":"No") << std::endl;
 }
 
 void DAWProject::VirtualStudioTechnology::outputAudio(double outputVolume)
@@ -224,18 +237,19 @@ struct Stage //5
 {
     Stage();
 
-    int numOfMonitorSpeakers = 10;
-    int numOfMicrophones = 20;
-    int numOfInstrumentStands = 20;
+    int numOfMonitorSpeakers, numOfMicrophones, numOfInstrumentStands;
     double stageWidth = 40;
-    double stageDepth =20;
+    double stageDepth = 20;
 
     void supportPerformerSetup();
     void transmitSoundToFOHSystem();
     void provideStageMonitoring();
 };
 
-Stage::Stage()
+Stage::Stage() :
+numOfMonitorSpeakers(10),
+numOfMicrophones(20),
+numOfInstrumentStands(20)
 {
     std::cout << "\nStage being construted!" << std::endl;
 }
@@ -247,7 +261,7 @@ void Stage::supportPerformerSetup()
 
 void Stage::transmitSoundToFOHSystem()
 {
-    std::cout << "\nTransmit sound to FOH system" << std::endl;
+    std::cout << "\nTransmit sound to FOH system with " << numOfMicrophones << " microphones"  << std::endl;
 }
 
 void Stage::provideStageMonitoring()
@@ -262,15 +276,17 @@ struct FrontOfHouseAudioSystem //6
     int numOfAudioChannels = 12;
     int numOfSpeakers = 10;
     float outputWattage = 1000.0f;
-    std::string brandName = "DiGiCo";
-    std::string typeOfMixingConsole = "sd12";
+    std::string brandName;
+    std::string typeOfMixingConsole;
 
     void amplifyInputSignals();
     void routeSoundToAudience();
     void adjustVolumeAndEQSettings();
 };
 
-FrontOfHouseAudioSystem::FrontOfHouseAudioSystem()
+FrontOfHouseAudioSystem::FrontOfHouseAudioSystem() :
+brandName("DiGiCo"),
+typeOfMixingConsole("sd12")
 {
     std::cout << "\nFrontOfHouseAudioSystem being construted!" << std::endl;
 }
@@ -287,17 +303,15 @@ void FrontOfHouseAudioSystem::routeSoundToAudience()
 
 void FrontOfHouseAudioSystem::adjustVolumeAndEQSettings()
 {
-    std::cout << "\nAdjust volume and EQ settings" << std::endl;
+    std::cout << "\nAdjust volume and EQ settings with " << typeOfMixingConsole << " console from " << brandName << std::endl;
 }
 
 struct BackstageArea //7
 {
     BackstageArea();
 
-    int numOfLockers = 80;
-    int numOfDressingRooms =3;
-    double backStageSize = 500.0;
-    int numOfEquimentStorageShelves = 10;
+    int numOfLockers, numOfDressingRooms, numOfEquimentStorageShelves;
+    double backStageSize;
     bool hasEquipmentLoadingAccess = true;
     
     void provideRestingSpaceForPerformers();
@@ -305,33 +319,35 @@ struct BackstageArea //7
     void provideStorageForPersonalBelongings();
 };
 
-BackstageArea::BackstageArea()
+BackstageArea::BackstageArea() :
+numOfLockers(80),
+numOfDressingRooms(3),
+numOfEquimentStorageShelves(10),
+backStageSize(500.0)
 {
     std::cout << "\nBackstageArea being constructed!" << std::endl;
 }
 
 void BackstageArea::provideRestingSpaceForPerformers()
 {
-    std::cout << "\nProvide resting space for performers" << std::endl;
+    std::cout << "\nProvide " << backStageSize << " squre metres of resting space for performers" << std::endl;
 }
 
 void BackstageArea::storeCablesAndInstruments()
 {
-    std::cout << "\nStore cables and instruments" << std::endl;
+    std::cout << "\nStore cables and instruments with "<< numOfEquimentStorageShelves << " storeage shelves" << std::endl;
 }
 
 void BackstageArea::provideStorageForPersonalBelongings()
 {
-    std::cout << "\nProvide storage for personal belongings" << std::endl;
+    std::cout << "\nProvide storage for personal belongings with " << numOfLockers << " lockers" << std::endl;
 }
 
 struct BarCounter //8
 {
     BarCounter();
     
-    int numOfDrinkOptions = 30;
-    int numOfStaffMembers = 6;
-    int numOfSeats = 10;
+    int numOfDrinkOptions, numOfStaffMembers, numOfSeats;
     bool providesNonAlcoholicDrink = true;
     bool hasMerchandiseDisplayArea = true;
     
@@ -340,14 +356,17 @@ struct BarCounter //8
     void sellBandMerchandise();
 };
 
-BarCounter::BarCounter()
+BarCounter::BarCounter():
+numOfDrinkOptions(30),
+numOfStaffMembers(6),
+numOfSeats(10)
 {
     std::cout << "\nBarCounter being constructed!" << std::endl;
 }
 
 void BarCounter::serveDrinksToCustomers()
 {
-    std::cout << "\nServe drinks to customers" << std::endl;
+    std::cout << "\nServe " << numOfDrinkOptions << " kinds of drinks to customers" << std::endl;
 }
 
 void BarCounter::processPayments()
@@ -365,20 +384,20 @@ struct LightingRig //9, Nested UDT
     LightingRig();
 
     int numOfTraditionalLights = 12;
-    int numOfComputerLights = 35;
+    int numOfComputerLights =  35;
     int numOfControlChannels = 512;
-    std::string lightingConsoleType = "MA Lighting";
     double heightOfRig = 10.5;
+    std::string lightingConsoleType;
 
     struct LightingConsole
     {
         LightingConsole();
 
-        std::string consoleName = "GrandMA3";
         int numOfScreens = 3;
         int numOfFaders = 64;
-        bool hasInternetConnectivity = true;
+        bool hasInternetConnectivity;
         double weightOfConsole = 120.0;
+        std::string consoleName;
 
         void panAndTiltLights(int lightNumber, double panAngle = 135.0, double tiltAngle = 45.0);
         void adjustLightIntensity(int lightNumber, double intensity = 100.0);
@@ -393,19 +412,22 @@ struct LightingRig //9, Nested UDT
     LightingConsole mainConsole;
 };
 
-LightingRig::LightingConsole::LightingConsole()
+LightingRig::LightingConsole::LightingConsole():
+hasInternetConnectivity(true),
+consoleName("GrandMA3")
 {
     std::cout << "\nLightingConsole being constructed!" << std::endl;
 }
 
-LightingRig::LightingRig()
+LightingRig::LightingRig():
+lightingConsoleType("MA Lighting")
 {
     std::cout << "\nLighitngRig being constructed!" << std::endl;
 }
 
 void LightingRig::illuminateTheStage()
 {
-    std::cout << "\nIlluminate the stage" << std::endl;
+    std::cout << "\nIlluminate the stage from " << heightOfRig << " metres high" << std::endl;
 }
 
 void LightingRig::changeLightingColorsAndPatterns(LightingConsole consoleInUse)
@@ -430,7 +452,7 @@ void LightingRig::LightingConsole::adjustLightIntensity(int lightNumber, double 
 
 void LightingRig::LightingConsole::changeGoboPattern(int lightNumber, std::string patternName)
 {
-    std::cout << "\nChange the gobo pattern of light " << lightNumber << " to " << patternName << std::endl;
+    std::cout << "\nChange the gobo pattern of light " << lightNumber << " to "<< consoleName << "'s default pattern: " << patternName << std::endl;
 }
 
 struct Livehouse //10
@@ -514,7 +536,7 @@ int main()
     mdk.transmitDigitalSignal();
     mdk.controlVirtualInstruments("virtual cello");
     mdk.triggerLoops();
-    std::cout << "\n[Print] The midiKeyboard has " << mdk.numOfKeys << " keys." << std::endl;
+    std::cout << "\n[Print] The midiKeyboard has " << mdk.numOfKeys << " keys" << std::endl;
     std::cout << "\n[Print] Is the arpeggiator mode on? " << (mdk.arpeggiator ? "Yes" : "No") << std::endl;
     std::cout << "\n[Print] Is the step sequencer mode on? " << (mdk.stepSequencer ? "Yes" : "No") << std::endl;
     std::cout << "----------------\n";
@@ -524,7 +546,7 @@ int main()
     cfm.grindCoffeeBeans();
     cfm.brewEspresso();
     cfm.steamMilk();
-    std::cout << "\n[Print] Current steam temperature is " << cfm.steamTemperature << " degrees." << std::endl;
+    std::cout << "\n[Print] Current steam temperature is " << cfm.steamTemperature << " degrees" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -532,7 +554,7 @@ int main()
     skb.performTricks("Peterpan");
     skb.rollOverRamps();
     skb.carveAlongCurves();
-    std::cout << "\n[Print] The deck length of the skateboard is " << skb.deckLength << "mm." << std::endl;
+    std::cout << "\n[Print] The deck length of the skateboard is " << skb.deckLength << "mm" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -540,7 +562,7 @@ int main()
     dawp.playBackComposition();
     dawp.applyAudioEffects("reverb", dawp.virtualGuitar);
     dawp.quantizeNotes();
-    std::cout << "\n[Print] A " << dawp.virtualGuitar.vstName << " is being used." << std::endl;
+    std::cout << "\n[Print] A " << dawp.virtualGuitar.vstName << " is being used" << std::endl;
     std::cout << "\n[Print] Is the project quantized? " << (dawp.isQuantized ? "Yes" : "No") << std::endl;
     std::cout << "----------------\n";
 
@@ -549,7 +571,7 @@ int main()
     vst.acceptMIDIInput();
     vst.outputAudio();
     vst.changePreset("Punk");
-    std::cout << "\n[Print] The preset has been changed to [" << vst.changePreset("Jazz") << "]." << std::endl;
+    std::cout << "\n[Print] The preset has been changed to [" << vst.changePreset("Jazz") << "]" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -557,7 +579,7 @@ int main()
     stg.supportPerformerSetup();
     stg.transmitSoundToFOHSystem();
     stg.provideStageMonitoring();
-    std::cout << "\n[Print] There are " << stg.numOfMonitorSpeakers << " monitor speakers on the stage." << std::endl;
+    std::cout << "\n[Print] There are " << stg.numOfMonitorSpeakers << " monitor speakers on the stage" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -565,7 +587,7 @@ int main()
     foh.amplifyInputSignals();
     foh.routeSoundToAudience();
     foh.adjustVolumeAndEQSettings();
-    std::cout << "\n[Print] The output wattage of the FOH system is " << foh.outputWattage << "W." << std::endl;
+    std::cout << "\n[Print] The output wattage of the FOH system is " << foh.outputWattage << "W" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -573,7 +595,7 @@ int main()
     bsa.provideRestingSpaceForPerformers();
     bsa.storeCablesAndInstruments();
     bsa.provideStorageForPersonalBelongings();
-    std::cout << "\n[Print] There are " << bsa.numOfLockers << " lockers in the backstage area." << std::endl;
+    std::cout << "\n[Print] There are " << bsa.numOfLockers << " lockers in the backstage area" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -581,7 +603,7 @@ int main()
     bc.serveDrinksToCustomers();
     bc.processPayments();
     bc.sellBandMerchandise();
-    std::cout << "\n[Print] There are " << bc.numOfDrinkOptions << " drink options on the bar counter." << std::endl;
+    std::cout << "\n[Print] There are " << bc.numOfDrinkOptions << " drink options on the bar counter" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -589,7 +611,7 @@ int main()
     ltr.illuminateTheStage();
     ltr.changeLightingColorsAndPatterns(ltr.mainConsole);
     ltr.synchronizeLightingWithMusic(ltr.mainConsole);
-    std::cout << "\n[Print] The lighting console type is " << ltr.lightingConsoleType << "." << std::endl;
+    std::cout << "\n[Print] The lighting console type is " << ltr.lightingConsoleType << std::endl;
     std::cout << "----------------\n";
 
 
@@ -597,7 +619,7 @@ int main()
     lc.panAndTiltLights(5, 135.0, 60.0);
     lc.adjustLightIntensity(1, 100.0);
     lc.changeGoboPattern(2, "star");
-    std::cout << "\n[Print] The lighting console has " << lc.numOfFaders << " faders." << std::endl;
+    std::cout << "\n[Print] The lighting console has " << lc.numOfFaders << " faders" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -605,7 +627,7 @@ int main()
     lvh.hostLiveMusicPerformances();
     lvh.serveDrinksToAttendees();
     lvh.mixSoundAndControlStageLighting();
-    std::cout << "\n[Print] The livehouse is using " << lvh.mixSoundAndControlStageLighting() << " consoles to mix sound and control stage lighting." << std::endl;
+    std::cout << "\n[Print] The livehouse is using " << lvh.mixSoundAndControlStageLighting() << " consoles to mix sound and control stage lighting" << std::endl;
     std::cout << "----------------\n";
 
 
