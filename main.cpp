@@ -85,6 +85,7 @@ struct MIDIKeyboard //1
     void transmitDigitalSignal();
     void controlVirtualInstruments(std::string intrumentName);
     void triggerLoops();
+    void recordLoops(int stepCount = 16);
 };
 
 MIDIKeyboard::MIDIKeyboard() :
@@ -108,6 +109,20 @@ void MIDIKeyboard::controlVirtualInstruments(std::string intrumentName)
 void MIDIKeyboard::triggerLoops()
 {
     std::cout << "\nTrigger loops" << std::endl;
+
+}
+
+void MIDIKeyboard::recordLoops(int stepCount)
+{
+    int layerNum = 1;
+    while(layerNum <= stepCount)
+    {
+        std::cout << "\n[Loop] The step sequencer is recording layer [" << layerNum << "]" << std::endl;
+        ++layerNum;
+
+        if(layerNum > stepCount)
+            std::cout << "\n[Loop] The step sequencer has ran out of layers to record" << std::endl;
+    }
 }
 
 struct CoffeeMachine //2
@@ -569,9 +584,11 @@ int main()
     mdk.transmitDigitalSignal();
     mdk.controlVirtualInstruments("virtual cello");
     mdk.triggerLoops();
-    std::cout << "\n[Print] The midiKeyboard has " << mdk.numOfKeys << " keys" << std::endl;
-    std::cout << "\n[Print] Is the arpeggiator mode on? " << (mdk.arpeggiator ? "Yes" : "No") << std::endl;
-    std::cout << "\n[Print] Is the step sequencer mode on? " << (mdk.stepSequencer ? "Yes" : "No") << std::endl;
+    std::cout << "\n[Member Initialization] The midiKeyboard has " << mdk.numOfKeys << " keys" << std::endl;
+    std::cout << "\n[Member Initialization] Is the arpeggiator mode on? " << (mdk.arpeggiator ? "Yes" : "No") << std::endl;
+    std::cout << "\n[Member Initialization] Is the step sequencer mode on? " << (mdk.stepSequencer ? "Yes" : "No") << std::endl;
+
+    mdk.recordLoops(16);
     std::cout << "----------------\n";
 
 
@@ -579,7 +596,7 @@ int main()
     cfm.grindCoffeeBeans();
     cfm.brewEspresso();
     cfm.steamMilk();
-    std::cout << "\n[Print] Current steam temperature is " << cfm.steamTemperature << " degrees" << std::endl;
+    std::cout << "\n[Member Initialization] Current steam temperature is " << cfm.steamTemperature << " degrees" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -587,7 +604,7 @@ int main()
     skb.performTricks("Peterpan");
     skb.rollOverRamps();
     skb.carveAlongCurves();
-    std::cout << "\n[Print] The deck length of the skateboard is " << skb.deckLength << "mm" << std::endl;
+    std::cout << "\n[Member Initialization] The deck length of the skateboard is " << skb.deckLength << "mm" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -595,8 +612,8 @@ int main()
     dawp.playBackComposition();
     dawp.applyAudioEffects("reverb", dawp.virtualGuitar);
     dawp.quantizeNotes();
-    std::cout << "\n[Print] A " << dawp.virtualGuitar.vstName << " is being used" << std::endl;
-    std::cout << "\n[Print] Is the project quantized? " << (dawp.isQuantized ? "Yes" : "No") << std::endl;
+    std::cout << "\n[Member Initialization] A " << dawp.virtualGuitar.vstName << " is being used" << std::endl;
+    std::cout << "\n[Member Initialization] Is the project quantized? " << (dawp.isQuantized ? "Yes" : "No") << std::endl;
     std::cout << "----------------\n";
 
 
@@ -604,7 +621,7 @@ int main()
     vst.acceptMIDIInput();
     vst.outputAudio();
     vst.changePreset("Punk");
-    std::cout << "\n[Print] The preset has been changed to [" << vst.changePreset("Jazz") << "]" << std::endl;
+    std::cout << "\n[Member Initialization] The preset has been changed to [" << vst.changePreset("Jazz") << "]" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -612,7 +629,7 @@ int main()
     stg.supportPerformerSetup();
     stg.transmitSoundToFOHSystem();
     stg.provideStageMonitoring();
-    std::cout << "\n[Print] There are " << stg.numOfMonitorSpeakers << " monitor speakers on the stage" << std::endl;
+    std::cout << "\n[Member Initialization] There are " << stg.numOfMonitorSpeakers << " monitor speakers on the stage" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -620,7 +637,7 @@ int main()
     foh.amplifyInputSignals();
     foh.routeSoundToAudience();
     foh.adjustVolumeAndEQSettings();
-    std::cout << "\n[Print] The output wattage of the FOH system is " << foh.outputWattage << "W" << std::endl;
+    std::cout << "\n[Member Initialization] The output wattage of the FOH system is " << foh.outputWattage << "W" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -628,7 +645,7 @@ int main()
     bsa.provideRestingSpaceForPerformers();
     bsa.storeCablesAndInstruments();
     bsa.provideStorageForPersonalBelongings();
-    std::cout << "\n[Print] There are " << bsa.numOfLockers << " lockers in the backstage area" << std::endl;
+    std::cout << "\n[Member Initialization] There are " << bsa.numOfLockers << " lockers in the backstage area" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -636,7 +653,7 @@ int main()
     bc.serveDrinksToCustomers();
     bc.processPayments();
     bc.sellBandMerchandise();
-    std::cout << "\n[Print] There are " << bc.numOfDrinkOptions << " drink options on the bar counter" << std::endl;
+    std::cout << "\n[Member Initialization] There are " << bc.numOfDrinkOptions << " drink options on the bar counter" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -644,7 +661,7 @@ int main()
     ltr.illuminateTheStage();
     ltr.changeLightingColorsAndPatterns(ltr.mainConsole);
     ltr.synchronizeLightingWithMusic(ltr.mainConsole);
-    std::cout << "\n[Print] The lighting console type is " << ltr.lightingConsoleType << std::endl;
+    std::cout << "\n[Member Initialization] The lighting console type is " << ltr.lightingConsoleType << std::endl;
     std::cout << "----------------\n";
 
 
@@ -652,7 +669,7 @@ int main()
     lc.panAndTiltLights(5, 135.0, 60.0);
     lc.adjustLightIntensity(1, 100.0);
     lc.changeGoboPattern(2, "star");
-    std::cout << "\n[Print] The lighting console has " << lc.numOfFaders << " faders" << std::endl;
+    std::cout << "\n[Member Initialization] The lighting console has " << lc.numOfFaders << " faders" << std::endl;
     std::cout << "----------------\n";
 
 
@@ -660,7 +677,7 @@ int main()
     lvh.hostLiveMusicPerformances();
     lvh.serveDrinksToAttendees();
     lvh.mixSoundAndControlStageLighting();
-    std::cout << "\n[Print] The livehouse is using " << lvh.mixSoundAndControlStageLighting() << " consoles to mix sound and control stage lighting" << std::endl;
+    std::cout << "\n[Member Initialization] The livehouse is using " << lvh.mixSoundAndControlStageLighting() << " consoles to mix sound and control stage lighting" << std::endl;
     std::cout << "----------------\n";
 
 
