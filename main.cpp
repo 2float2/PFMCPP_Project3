@@ -136,6 +136,8 @@ struct CoffeeMachine //2
     void grindCoffeeBeans();
     void brewEspresso();
     void steamMilk();
+    void extractEspresso(int extractTime = 25);
+        
 };
 
 CoffeeMachine::CoffeeMachine() :
@@ -160,6 +162,15 @@ void CoffeeMachine::brewEspresso()
 void CoffeeMachine::steamMilk()
 {
     std::cout << "\nSteam milk at " << steamTemperature << " degrees" << std::endl;
+}
+
+void CoffeeMachine::extractEspresso(int extractTime)
+{
+    for(int i = 0; i < extractTime; ++i)
+    {
+        std::cout << "\n[Loop] Extraction will be complete in " << extractTime - i << " seconds" << std::endl;
+    }
+    std::cout << "\n[Loop] Extraction complete!" << std::endl;
 }
 
 struct Skateboard //3
@@ -587,7 +598,6 @@ int main()
     std::cout << "\n[Member Initialization] The midiKeyboard has " << mdk.numOfKeys << " keys" << std::endl;
     std::cout << "\n[Member Initialization] Is the arpeggiator mode on? " << (mdk.arpeggiator ? "Yes" : "No") << std::endl;
     std::cout << "\n[Member Initialization] Is the step sequencer mode on? " << (mdk.stepSequencer ? "Yes" : "No") << std::endl;
-
     mdk.recordLoops(16);
     std::cout << "----------------\n";
 
@@ -597,6 +607,7 @@ int main()
     cfm.brewEspresso();
     cfm.steamMilk();
     std::cout << "\n[Member Initialization] Current steam temperature is " << cfm.steamTemperature << " degrees" << std::endl;
+    cfm.extractEspresso(20);
     std::cout << "----------------\n";
 
 
