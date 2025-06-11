@@ -379,7 +379,7 @@ struct FrontOfHouseAudioSystem //6
 {
     FrontOfHouseAudioSystem();
 
-    int numOfAudioChannels = 12;
+    int numOfAudioChannels = 6;
     int numOfSpeakers = 10;
     float outputWattage = 1000.0f;
     std::string brandName;
@@ -388,6 +388,7 @@ struct FrontOfHouseAudioSystem //6
     void amplifyInputSignals();
     void routeSoundToAudience();
     void adjustVolumeAndEQSettings();
+    void testAudioChannels();
 };
 
 FrontOfHouseAudioSystem::FrontOfHouseAudioSystem() :
@@ -412,23 +413,35 @@ void FrontOfHouseAudioSystem::adjustVolumeAndEQSettings()
     std::cout << "\nAdjust volume and EQ settings with " << typeOfMixingConsole << " console from " << brandName << std::endl;
 }
 
+void FrontOfHouseAudioSystem::testAudioChannels()
+{
+    std::cout << "Testing audio channels..." << std::endl;
+    for(int i =0 ; i < numOfAudioChannels; ++i)
+    {
+        std::cout << "\n[Loop] Now testing audio channel [" << i + 1 << "]" << std::endl;
+    }
+    std::cout << "\n[Loop] Audio channel test complete!" << std::endl;
+}
+
 struct BackstageArea //7
 {
     BackstageArea();
 
-    int numOfLockers, numOfDressingRooms, numOfEquimentStorageShelves;
+    int numOfEmptyLockers, numOfDressingRooms, numOfEquimentStorageShelves,numOfAllLockers;
     double backStageSize;
     bool hasEquipmentLoadingAccess = true;
     
     void provideRestingSpaceForPerformers();
     void storeCablesAndInstruments();
     void provideStorageForPersonalBelongings();
+    int storePersonalBelongings();
 };
 
 BackstageArea::BackstageArea() :
-numOfLockers(80),
+numOfEmptyLockers(5),
 numOfDressingRooms(3),
 numOfEquimentStorageShelves(10),
+numOfAllLockers(8),
 backStageSize(500.0)
 {
     std::cout << "\nBackstageArea being constructed!" << std::endl;
@@ -446,7 +459,24 @@ void BackstageArea::storeCablesAndInstruments()
 
 void BackstageArea::provideStorageForPersonalBelongings()
 {
-    std::cout << "\nProvide storage for personal belongings with " << numOfLockers << " lockers" << std::endl;
+    std::cout << "\nProvide storage for personal belongings with " << numOfAllLockers << " lockers" << std::endl;
+}
+
+int BackstageArea::storePersonalBelongings()
+{    
+    if(numOfEmptyLockers == 0)
+    {
+        std::cout << "\n[Loop] Sorry, there are no empty lockers left" << std::endl;
+        return numOfEmptyLockers;
+    }
+    
+    while(numOfEmptyLockers > 0)
+    {
+        --numOfEmptyLockers;
+        std::cout << "\n[Loop] 1 locker allocated. Remaining: " << numOfEmptyLockers << std::endl;
+    }
+    std::cout << "\n[Loop] Sorry, there are no empty lockers left" << std::endl;
+    return numOfEmptyLockers;
 }
 
 struct BarCounter //8
@@ -624,6 +654,8 @@ int main()
     std::cout << "----------------\n";
     
     BackstageArea bsa;
+    BackstageArea bsa0;
+    bsa0.numOfEmptyLockers = 0;
     std::cout << "----------------\n";
     
     BarCounter bc;
@@ -699,6 +731,7 @@ int main()
     foh.routeSoundToAudience();
     foh.adjustVolumeAndEQSettings();
     std::cout << "\n[Member Initialization] The output wattage of the FOH system is " << foh.outputWattage << "W" << std::endl;
+    foh.testAudioChannels();
     std::cout << "----------------\n";
 
 
@@ -706,7 +739,9 @@ int main()
     bsa.provideRestingSpaceForPerformers();
     bsa.storeCablesAndInstruments();
     bsa.provideStorageForPersonalBelongings();
-    std::cout << "\n[Member Initialization] There are " << bsa.numOfLockers << " lockers in the backstage area" << std::endl;
+    std::cout << "\n[Member Initialization] There are " << bsa.numOfAllLockers << " lockers in the backstage area" << std::endl;
+    bsa.storePersonalBelongings();
+    bsa0.storePersonalBelongings();
     std::cout << "----------------\n";
 
 
