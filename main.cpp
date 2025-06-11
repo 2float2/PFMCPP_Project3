@@ -177,7 +177,7 @@ struct Skateboard //3
 {
     Skateboard();
 
-    int truckTurningAngle = 65;
+    int maxTruckTurningAngle = 65;
     float wheelSize;
     double deckLength;
     std::string wheelHardness;
@@ -186,6 +186,8 @@ struct Skateboard //3
     void performTricks(std::string trickName);
     void rollOverRamps();
     void carveAlongCurves();
+    void turnOnTheSkateboard();
+    void turnTheTruck();
 };
 
 Skateboard::Skateboard() :
@@ -210,6 +212,22 @@ void Skateboard::rollOverRamps()
 void Skateboard::carveAlongCurves()
 {
     std::cout << "\nCarve along curves" << std::endl;
+}
+
+void Skateboard::turnOnTheSkateboard()
+{
+    std::cout << "\nTurn on the skateboard" << std::endl;
+}
+
+void Skateboard::turnTheTruck()
+{
+    int currentTruckTurningAngle = 0;
+    while(currentTruckTurningAngle < maxTruckTurningAngle)
+    {
+        turnOnTheSkateboard();
+        ++currentTruckTurningAngle;
+    }
+    std::cout << "\n[Loop] The skateboard has reached its maximum turning angle" << std::endl;
 }
 
 struct DAWProject //4, Nested UDT
@@ -616,6 +634,7 @@ int main()
     skb.rollOverRamps();
     skb.carveAlongCurves();
     std::cout << "\n[Member Initialization] The deck length of the skateboard is " << skb.deckLength << "mm" << std::endl;
+    skb.turnTheTruck();
     std::cout << "----------------\n";
 
 
