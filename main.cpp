@@ -85,7 +85,7 @@ struct MIDIKeyboard //1
     void transmitDigitalSignal();
     void controlVirtualInstruments(std::string intrumentName);
     void triggerLoops();
-    void recordLoops(int stepCount = 16);
+    void recordLoops(int stepCount = 4);
 };
 
 MIDIKeyboard::MIDIKeyboard() :
@@ -117,7 +117,7 @@ void MIDIKeyboard::recordLoops(int stepCount)
     int layerNum = 1;
     while(layerNum <= stepCount)
     {
-        std::cout << "\n[Loop] The step sequencer is recording layer [" << layerNum << "]" << std::endl;
+        std::cout << "\n[Loop] Now recording layer [" << layerNum << "]" << std::endl;
         ++layerNum;
 
         if(layerNum > stepCount)
@@ -187,7 +187,7 @@ struct Skateboard //3
     void rollOverRamps();
     void carveAlongCurves();
     void turnOnTheSkateboard();
-    void turnTheTruck();
+    void turnTheTruck(int currentTruckTurningAngle);
 };
 
 Skateboard::Skateboard() :
@@ -216,18 +216,17 @@ void Skateboard::carveAlongCurves()
 
 void Skateboard::turnOnTheSkateboard()
 {
-    std::cout << "\nTurn on the skateboard" << std::endl;
+    std::cout << "\nNow turning..." << std::endl;
 }
 
-void Skateboard::turnTheTruck()
+void Skateboard::turnTheTruck(int currentTruckTurningAngle)
 {
-    int currentTruckTurningAngle = 0;
     while(currentTruckTurningAngle < maxTruckTurningAngle)
     {
         turnOnTheSkateboard();
         ++currentTruckTurningAngle;
     }
-    std::cout << "\n[Loop] The skateboard has reached its maximum turning angle" << std::endl;
+    std::cout << "\n[Loop] The skateboard has reached its maximum turning angle of 65 degrees" << std::endl;
 }
 
 struct DAWProject //4, Nested UDT
@@ -283,7 +282,7 @@ isQuantized(true)
 
 void DAWProject::playBack()
 {
-    std::cout << "\nPlay back the composition" << std::endl;
+    std::cout << "\nNow playing..." << std::endl;
 }
 
 void DAWProject::playBackComposition()
@@ -322,9 +321,9 @@ std::string DAWProject::VirtualStudioTechnology::changePreset(std::string preset
 void DAWProject::VirtualStudioTechnology::testMIDIInputChannels(int numOfMIDIInputChannels)
 {
     std::cout << "Testing MIDI input channels..." << std::endl;
-    for (int i = 1; i <= numOfMIDIInputChannels; ++i)
+    for (int i = 1; i < numOfMIDIInputChannels; ++i)
     {
-        std::cout << "\n[Loop] Now testing MIDI input channel [" << i << "]" << std::endl;
+        std::cout << "\n[Loop] Now testing MIDI input channel [" << i + 1 << "]" << std::endl;
     }
     std::cout << "\n[Loop] MIDI input channels test complete!" << std::endl;
 }
@@ -340,11 +339,12 @@ struct Stage //5
     void supportPerformerSetup();
     void transmitSoundToFOHSystem();
     void provideStageMonitoring();
+    void testMicrophones();
 };
 
 Stage::Stage() :
 numOfMonitorSpeakers(10),
-numOfMicrophones(20),
+numOfMicrophones(5),
 numOfInstrumentStands(20)
 {
     std::cout << "\nStage being construted!" << std::endl;
@@ -363,6 +363,16 @@ void Stage::transmitSoundToFOHSystem()
 void Stage::provideStageMonitoring()
 {
     std::cout << "\nProvide stage monitoring" << std::endl;
+}
+
+void Stage::testMicrophones()
+{
+    std::cout << "Testing microphones..." << std::endl;
+    for(int i =0 ; i < numOfMicrophones; ++i)
+    {
+        std::cout << "\n[Loop] Now testing microphone [" << i + 1 << "]" << std::endl;
+    }
+    std::cout << "\n[Loop] Microphone test complete!" << std::endl;
 }
 
 struct FrontOfHouseAudioSystem //6
@@ -635,7 +645,7 @@ int main()
     std::cout << "\n[Member Initialization] The midiKeyboard has " << mdk.numOfKeys << " keys" << std::endl;
     std::cout << "\n[Member Initialization] Is the arpeggiator mode on? " << (mdk.arpeggiator ? "Yes" : "No") << std::endl;
     std::cout << "\n[Member Initialization] Is the step sequencer mode on? " << (mdk.stepSequencer ? "Yes" : "No") << std::endl;
-    mdk.recordLoops(16);
+    mdk.recordLoops(4);
     std::cout << "----------------\n";
 
 
@@ -653,7 +663,7 @@ int main()
     skb.rollOverRamps();
     skb.carveAlongCurves();
     std::cout << "\n[Member Initialization] The deck length of the skateboard is " << skb.deckLength << "mm" << std::endl;
-    skb.turnTheTruck();
+    skb.turnTheTruck(60);
     std::cout << "----------------\n";
 
 
@@ -680,6 +690,7 @@ int main()
     stg.transmitSoundToFOHSystem();
     stg.provideStageMonitoring();
     std::cout << "\n[Member Initialization] There are " << stg.numOfMonitorSpeakers << " monitor speakers on the stage" << std::endl;
+    stg.testMicrophones();
     std::cout << "----------------\n";
 
 
