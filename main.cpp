@@ -253,9 +253,10 @@ struct DAWProject //4, Nested UDT
         void acceptMIDIInput();
         void outputAudio(double outputVolume = 80.0);
         std::string changePreset(std::string presetName);
+        void testMIDIInputChannels(int numOfMIDIInputChannels = 2);
     };
 
-    
+    void playBack();
     void playBackComposition();
     void applyAudioEffects(std::string effectName, VirtualStudioTechnology vstInUse);    
     void quantizeNotes();
@@ -274,15 +275,23 @@ vstType("virtual instrument")
 }
 
 DAWProject::DAWProject() :
-numOfSections(120),
+numOfSections(8),
 isQuantized(true)
 {
     std::cout << "\nDAWProject being constructed!" << std::endl;
 }
 
+void DAWProject::playBack()
+{
+    std::cout << "\nPlay back the composition" << std::endl;
+}
+
 void DAWProject::playBackComposition()
 {
-    std::cout << "\nPlay back composition" << std::endl;
+    for(int i = 0; i < numOfSections; ++i)
+    {
+        playBack();
+    }    
 }
 
 void DAWProject::applyAudioEffects(std::string effectName, VirtualStudioTechnology vstInUse)
@@ -308,6 +317,16 @@ void DAWProject::VirtualStudioTechnology::outputAudio(double outputVolume)
 std::string DAWProject::VirtualStudioTechnology::changePreset(std::string presetName)
 {
     return presetName;
+}
+
+void DAWProject::VirtualStudioTechnology::testMIDIInputChannels(int numOfMIDIInputChannels)
+{
+    std::cout << "Testing MIDI input channels..." << std::endl;
+    for (int i = 1; i <= numOfMIDIInputChannels; ++i)
+    {
+        std::cout << "\n[Loop] Now testing MIDI input channel [" << i << "]" << std::endl;
+    }
+    std::cout << "\n[Loop] MIDI input channels test complete!" << std::endl;
 }
 
 struct Stage //5
@@ -652,6 +671,7 @@ int main()
     vst.outputAudio();
     vst.changePreset("Punk");
     std::cout << "\n[Member Initialization] The preset has been changed to [" << vst.changePreset("Jazz") << "]" << std::endl;
+    vst.testMIDIInputChannels(2);
     std::cout << "----------------\n";
 
 
