@@ -640,6 +640,7 @@ struct Livehouse //10
     void hostLiveMusicPerformances();
     void serveDrinksToAttendees();
     std::string mixSoundAndControlStageLighting(std::string AudioSystemName = "DiGiCo", std::string LightingConsoleName = "GrandMA3");
+    void checkTickets(int totalAttendees = 20);
 };
 
 Livehouse::Livehouse()
@@ -660,6 +661,17 @@ void Livehouse::serveDrinksToAttendees()
 std::string Livehouse::mixSoundAndControlStageLighting(std::string AudioSystemName, std::string LightingConsoleName)
 {
     return AudioSystemName + " and " + LightingConsoleName;
+}
+
+void Livehouse::checkTickets(int totalAttendees)
+{
+    int checkedTickets = 0;
+    while(checkedTickets < totalAttendees)
+    {
+        ++checkedTickets;
+        std::cout << "\n[Loop] Checked ticket : " << checkedTickets << "/" << totalAttendees << std::endl;
+    }
+    std::cout << "\n[Loop] All tickets checked!" << std::endl;
 }
 
 int main()
@@ -813,6 +825,7 @@ int main()
     lvh.serveDrinksToAttendees();
     lvh.mixSoundAndControlStageLighting();
     std::cout << "\n[Member Initialization] The livehouse is using " << lvh.mixSoundAndControlStageLighting() << " consoles to mix sound and control stage lighting" << std::endl;
+    lvh.checkTickets(20);
     std::cout << "----------------\n";
 
 
