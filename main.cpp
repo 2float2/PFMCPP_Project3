@@ -483,19 +483,21 @@ struct BarCounter //8
 {
     BarCounter();
     
-    int numOfDrinkOptions, numOfStaffMembers, numOfSeats;
+    int numOfDrinkOptions, numOfStaffMembers, numOfSeats, currentDrinkStock;
     bool providesNonAlcoholicDrink = true;
     bool hasMerchandiseDisplayArea = true;
     
     void serveDrinksToCustomers();
     void processPayments();
     void sellBandMerchandise();
+    void restockDrinks(int customerDemand);
 };
 
 BarCounter::BarCounter():
 numOfDrinkOptions(30),
 numOfStaffMembers(6),
-numOfSeats(10)
+numOfSeats(10),
+currentDrinkStock(10)
 {
     std::cout << "\nBarCounter being constructed!" << std::endl;
 }
@@ -513,6 +515,17 @@ void BarCounter::processPayments()
 void BarCounter::sellBandMerchandise()
 {
     std::cout << "\nSell band merchandise" << std::endl;
+}
+
+void BarCounter::restockDrinks(int customerDemand)
+{
+    bool needRestock = (customerDemand > currentDrinkStock);
+    while(needRestock)
+    {
+        std::cout << "\n[Loop] Restocking drinks..." << std::endl;
+        currentDrinkStock = customerDemand;
+        needRestock = false;
+    }
 }
 
 struct LightingRig //9, Nested UDT
@@ -750,6 +763,7 @@ int main()
     bc.processPayments();
     bc.sellBandMerchandise();
     std::cout << "\n[Member Initialization] There are " << bc.numOfDrinkOptions << " drink options on the bar counter" << std::endl;
+    bc.restockDrinks(15);
     std::cout << "----------------\n";
 
 
