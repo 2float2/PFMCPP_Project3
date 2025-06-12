@@ -532,6 +532,7 @@ struct LightingRig //9, Nested UDT
 {
     LightingRig();
 
+    int numOfDMXChannels = 4;
     int numOfTraditionalLights = 12;
     int numOfComputerLights =  35;
     int numOfControlChannels = 512;
@@ -543,7 +544,7 @@ struct LightingRig //9, Nested UDT
         LightingConsole();
 
         int numOfScreens = 3;
-        int numOfFaders = 64;
+        int numOfFaders = 8;
         bool hasInternetConnectivity;
         double weightOfConsole = 120.0;
         std::string consoleName;
@@ -551,12 +552,14 @@ struct LightingRig //9, Nested UDT
         void panAndTiltLights(int lightNumber, double panAngle = 135.0, double tiltAngle = 45.0);
         void adjustLightIntensity(int lightNumber, double intensity = 100.0);
         void changeGoboPattern(int lightNumber, std::string patternName = "star");
+        void testFaders();
 
     };
     
     void illuminateTheStage();
     void changeLightingColorsAndPatterns(LightingConsole consoleInUse);
     void synchronizeLightingWithMusic(LightingConsole consoleInUse);
+    void testDMXChannels();
 
     LightingConsole mainConsole;
 };
@@ -589,6 +592,16 @@ void LightingRig::synchronizeLightingWithMusic(LightingConsole consoleInUse)
     std::cout << "\nSynchronize lighting with music using " << consoleInUse.consoleName << std::endl;
 }
 
+void LightingRig::testDMXChannels()
+{
+    std::cout << "Testing DMX channels..." << std::endl;
+    for(int i =0 ; i < numOfDMXChannels; ++i)
+    {
+        std::cout << "\n[Loop] Now testing DMX channel [" << i + 1 << "]" << std::endl;
+    }
+    std::cout << "\n[Loop] DMX channel test complete!" << std::endl;
+}
+
 void LightingRig::LightingConsole::panAndTiltLights(int lightNumber, double panAngle, double tiltAngle)
 {
     std::cout << "\nPan and tilt light " << lightNumber << " to " << panAngle << " and " << tiltAngle << std::endl;
@@ -602,6 +615,16 @@ void LightingRig::LightingConsole::adjustLightIntensity(int lightNumber, double 
 void LightingRig::LightingConsole::changeGoboPattern(int lightNumber, std::string patternName)
 {
     std::cout << "\nChange the gobo pattern of light " << lightNumber << " to "<< consoleName << "'s default pattern: " << patternName << std::endl;
+}
+
+void LightingRig::LightingConsole::testFaders()
+{
+    std::cout << "Testing faders..." << std::endl;
+    for(int i =0 ; i < numOfFaders; ++i)
+    {
+        std::cout << "\n[Loop] Now testing faders [" << i + 1 << "]" << std::endl;
+    }
+    std::cout << "\n[Loop] Faders channel test complete!" << std::endl;
 }
 
 struct Livehouse //10
@@ -772,6 +795,7 @@ int main()
     ltr.changeLightingColorsAndPatterns(ltr.mainConsole);
     ltr.synchronizeLightingWithMusic(ltr.mainConsole);
     std::cout << "\n[Member Initialization] The lighting console type is " << ltr.lightingConsoleType << std::endl;
+    ltr.testDMXChannels();
     std::cout << "----------------\n";
 
 
@@ -780,6 +804,7 @@ int main()
     lc.adjustLightIntensity(1, 100.0);
     lc.changeGoboPattern(2, "star");
     std::cout << "\n[Member Initialization] The lighting console has " << lc.numOfFaders << " faders" << std::endl;
+    lc.testFaders();
     std::cout << "----------------\n";
 
 
